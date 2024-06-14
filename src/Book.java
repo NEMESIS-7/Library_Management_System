@@ -3,7 +3,7 @@ public class Book {
     private String author;
     private String ISBN;
     private boolean availability;
-
+    //constructor to initialize the variables
     public Book(String Title, String author, String ISBN) {
         this.Title = Title;
         this.author = author;
@@ -41,19 +41,15 @@ public class Book {
     //method to check if a book has been checked out or is unavailable
     void checkout(){
         if (availability){
-            availability = false;
-            System.out.println("book has been checked out or is no longer available.");
-        }else{
-            System.out.println("book is no longer available.");
+           availability = false;
+            System.out.println("the book you are looking for has been checked out or is no longer available.");
         }
     }
     //method to return a book
     void returnBook(){
         if (!availability){
-            availability = true;
-            System.out.println("book has been returned");
-        }else{
-            System.out.println("book is now available.");
+           availability = true;
+            System.out.println("the book has been returned and is now available.");
         }
     }
 }

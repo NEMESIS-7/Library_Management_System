@@ -44,22 +44,23 @@ class Reader extends Member{
    public Reader(String name, String ID, String email) {
        super(name, ID, email); //constructor
    }
+
    //displaying reader information
     public void displayInfo(){
         System.out.println("Reader information:  ");
         super.displayInfo();
     }
 }
+
 class Employee extends Member{
+    private String employeeID;
     public String getEmployeeID() {
         return employeeID;
     }
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
-
-    private String employeeID;
-    //method to take empoloyee information
+    //method to take employee information
     public Employee(String name, String ID, String email) {
         super(name, ID, email);        //calling the constructor of the super class member
         System.out.println("enter your employee ID: ");
@@ -67,6 +68,7 @@ class Employee extends Member{
 
     }
     //method  to display user information
+
     public void displayInfo(){
         System.out.println("Employee information:  ");
         System.out.println("Employee ID: " + employeeID);
