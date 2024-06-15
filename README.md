@@ -4,7 +4,7 @@
 
 This Library Management System seeks to implement a robust and efficient structure capable of catering to the needs of the library and its stakeholders alike. The system manages book inventory, member information, and borrowing processes while providing essential functionalities to ensure smooth library operations.
 
-## Functional Requirements
+## Functional Requirements(as of now)
 
 1. **Book Management**:
    - Add and remove books as they become available or otherwise.
