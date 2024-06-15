@@ -33,7 +33,7 @@ The `Book` class stores information about a book and provides methods to access 
 - `setTitle(String Title)`: Changes the title of the book.
 - `setAuthor(String Author)`: Changes the author of the book.
 - `setISBN(String ISBN)`: Changes the ISBN of the book.
-- `checkAvailability()`: Returns the availability status of the book.
+- `isAvailable()`: Returns the availability status of the book.
 
 ### Member Class
 
