@@ -39,17 +39,17 @@ public class Book {
         return availability;
     }
     //method to check if a book has been checked out or is unavailable
-    void checkout(){
+    void borrowBook(){
         if (availability){
            availability = false;
-            System.out.println("the book you are looking for has been checked out or is no longer available.");
+           System.out.println("the book has been borrowed and is no longer available.");
         }
     }
     //method to return a book
     void returnBook(){
         if (!availability){
            availability = true;
-            System.out.println("the book has been returned and is now available.");
+           System.out.println("the book has been returned and is now available.");
         }
     }
 }

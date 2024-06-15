@@ -19,10 +19,22 @@ public class Main {
 
         //checking availability using the isAvailable method and a ternary operator
         System.out.println((((book.isAvailable())) ? "the book is available" : "no, book is not available"));
-        //checking out a book
-        book.checkout();
-        //returning a book
-        book.returnBook();
+        //borrowing a book
+        System.out.println("are you borrowing or returning a book? ");
+        String answer = input.nextLine().toLowerCase();
+        switch (answer) {
+            case "returning":
+                book.returnBook();
+                break;
+            case "borrowing":
+                book.borrowBook();
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+//        book.borrowBook();
+//        //returning a book
+//        book.returnBook();
 
         //calling the reader methods
         System.out.println("enter your name: ");
