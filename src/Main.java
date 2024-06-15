@@ -22,16 +22,23 @@ public class Main {
         //borrowing a book
         System.out.println("are you borrowing or returning a book? ");
         String answer = input.nextLine().toLowerCase();
-        switch (answer) {
-            case "returning":
-                book.returnBook();
-                break;
-            case "borrowing":
-                book.borrowBook();
-                break;
-            default:
-                System.out.println("Invalid choice");
+        if (answer.equals("returning")) {
+            book.returnBook();
+        }else if (answer.equals("borrowing")) {
+            book.borrowBook();
+        }else{
+            System.out.println("invalid choice");
         }
+//        switch (answer) {
+//            case "borrowing":
+//                book.borrowBook();
+//                break;
+//            case "returning":
+//                book.returnBook();
+//                break;
+//            default:
+//                System.out.println("Invalid choice");
+//        }
 //        book.borrowBook();
 //        //returning a book
 //        book.returnBook();
@@ -58,5 +65,15 @@ public class Main {
         //displaying employee(librarian) info
         employee.displayInfo();
 
+        Library library = new Library();
+        //adding a book to the library
+        library.addbook();
+        //removing a book from the library
+        library.removeBook();
+        //displaying all books in the library
+        library.displayBooks();
+        //searching for a book
+        library.searchBook();
+        //
     }
 }

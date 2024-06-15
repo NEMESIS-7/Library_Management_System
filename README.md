@@ -8,7 +8,7 @@ This Library Management System seeks to implement a robust and efficient structu
 
 1. **Book Management**:
    - Add and remove books as they become available or otherwise.
-   - Store information about each book, including title, author, and ISBN.
+   - Store information about a book, including title, author, and ISBN.
    - Check the availability of each book.
 
 2. **Member Management**:
@@ -63,5 +63,3 @@ To install and use the Library Management System, follow these steps:
 
 ## Contribution
 Contribututions are welcome. Just fork the repository and submit a pull request. However, if you have any questions, reach me via email at elikemfenuksu@gmail.com
-
-
