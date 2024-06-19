@@ -12,7 +12,11 @@ This Library Management System seeks to implement a robust and efficient structu
    - Check the availability of each book.
 
 2. **Member Management**:
-   - Store and retrieve information about members, including ID numbers and names.
+   - Store and retrieve information about members (readers and employees), including ID numbers, names and email.
+
+3. **Library Management**
+   - Add, store and remove books from the library. 
+   - Search for and display all books in the library.
 
 ## Classes and Their Functions
 
@@ -51,6 +55,9 @@ Inherits from the `Member` class and stores information specific to library read
 ### Librarian Class
 
 Inherits from the `Member` class and stores information specific to librarians, using the concept of polymorphism to manage both types of members.
+
+### Library Class
+The Library class has methods to 
 
 ## Installation and Usage
 

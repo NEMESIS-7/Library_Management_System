@@ -15,20 +15,20 @@ public class Member {
         return Name;
     }
     public void setName(String name) {
-        Name = name;
+        this.Name = name;
     }
     public String getEmail() {
         return Email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.Email = email;
     }
         //displaying member information
 
     public void displayInfo(){
-        System.out.println("ID: " + ID);
         System.out.println("Name: " + Name);
+        System.out.println("ID: " + ID);
         System.out.println("Email: " + Email);
     }
 
@@ -46,6 +46,7 @@ class Reader extends Member{
    }
 
    //displaying reader information
+    @Override
     public void displayInfo(){
         System.out.println("Reader information:  ");
         super.displayInfo();
@@ -63,15 +64,14 @@ class Employee extends Member{
     //method to take employee information
     public Employee(String name, String ID, String email) {
         super(name, ID, email);        //calling the constructor of the super class member
-        System.out.println("enter your employee ID: ");
+        //System.out.println("enter your employee ID: ");
         this.employeeID = input.nextLine();
 
     }
     //method  to display user information
-
+    @Override
     public void displayInfo(){
         System.out.println("Employee information:  ");
-        System.out.println("Employee ID: " + employeeID);
         super.displayInfo();
 
     }
