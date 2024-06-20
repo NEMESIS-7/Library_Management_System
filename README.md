@@ -1,103 +1,67 @@
 # Library Management System
 
-## Project Description
+## Overview
 
-The Library Management System is a Java-based application designed to efficiently manage books and members within a library setting. It supports operations such as adding, removing, borrowing, and returning books, alongside member management functionalities. This system serves as a foundational tool for organizing a small library and can be extended with additional features as needed.
+This Library Management System seeks to implement a robust and efficient structure capable of catering to the needs of the library and its stakeholders alike. The system manages book inventory, member information, and borrowing processes while providing essential functionalities to ensure smooth library operations.
 
-## Features
+## Functional Requirements
 
-- Library Management:
-  - Add books to the library
-  - Remove books from the library
-  - Display a list of all available books
-  - Search for a book in the library
-  - Check availability of books
-  - Borrow and return books
+1. **Book Management**:
+   - Add and remove books as they become available or otherwise.
+   - Store information about each book, including title, author, and ISBN.
+   - Check the availability of each book.
 
-- Member Management:
-  - Add members (Readers and Employees)
-  - Display member information
-  - Specific roles for members (Reader and Employee)
+2. **Member Management**:
+   - Store and retrieve information about members, including ID numbers and names.
 
-## Classes and Methods
+## Classes and Their Functions
 
 ### Book Class
 
-- Constructor:
-  - `Book(String title, String author, String ISBN)`: Initializes a new book with title, author, and ISBN. Availability is set to true by default.
+The `Book` class stores information about a book and provides methods to access and modify this information.
 
-- Setters and Getters:
-  - `void setTitle(String title)`: Sets the title of the book.
-  - `String getTitle()`: Returns the title of the book.
-  - `void setAuthor(String author)`: Sets the author of the book.
-  - `String getAuthor()`: Returns the author of the book.
-  - `void setISBN(String ISBN)`: Sets the ISBN of the book.
-  - `String getISBN()`: Returns the ISBN of the book.
+#### Attributes
+- `title`: The title of the book.
+- `author`: The author of the book.
+- `ISBN`: The International Standard Book Number of the book.
+- `availability`: A boolean indicating whether the book is available.
 
-- Availability:
-  - `boolean isAvailable()`: Checks if the book is available.
-
-- Operations:
-  - `void displayInformation()`: Displays information about the book (title, author, ISBN).
-  - `void borrowBook()`: Marks the book as borrowed.
-  - `void returnBook()`: Marks the book as available.
+#### Methods
+- `getTitle()`: Returns the title of the book.
+- `getAuthor()`: Returns the author of the book.
+- `getISBN()`: Returns the ISBN of the book.
+- `setTitle(String Title)`: Changes the title of the book.
+- `setAuthor(String Author)`: Changes the author of the book.
+- `setISBN(String ISBN)`: Changes the ISBN of the book.
+- `checkAvailability()`: Returns the availability status of the book.
 
 ### Member Class
 
-- Constructor:
-  - `Member(String name, String ID, String email)`: Initializes a new member with name, ID, and email.
+The `Member` class stores attributes common to both readers and librarians. The `Reader` and `Librarian` classes will inherit from this class.
 
-- Setters and Getters:
-  - `void setID(String ID)`: Sets the ID of the member.
-  - `String getID()`: Returns the ID of the member.
-  - `void setName(String name)`: Sets the name of the member.
-  - `String getName()`: Returns the name of the member.
-  - `void setEmail(String email)`: Sets the email of the member.
-  - `String getEmail()`: Returns the email of the member.
+#### Attributes
+- `name`: The name of the member.
+- `ID`: The ID number of the member.
+- `email`: The email address of the member (optional).
 
-- Operations:
-  - `void displayInfo()`: Displays information about the member.
+### Reader Class
 
-### Reader Class (extends Member)
+Inherits from the `Member` class and stores information specific to library readers.
 
-- Constructor:
-  - `Reader(String name, String ID, String email)`: Initializes a new reader with name, ID, and email.
+### Librarian Class
 
-- Operations:
-  - `void displayInfo()`: Displays information about the reader.
+Inherits from the `Member` class and stores information specific to librarians, using the concept of polymorphism to manage both types of members.
 
-### Employee Class (extends Member)
+## Installation and Usage
 
-- Constructor:
-  - `Employee(String name, String ID, String email)`: Initializes a new employee with name, ID, email, and prompts for employee ID during initialization.
+To install and use the Library Management System, follow these steps:
 
-- Setters and Getters:
-  - `void setEmployeeID(String employeeID)`: Sets the employee ID.
-  - `String getEmployeeID()`: Returns the employee ID.
+1. **Clone the Repository**:
+   git clone https://github.com/MVRK0/Library_Management_System.git
+2. **Navigaste to the project directory**
+3. **Build, if necessary, and run the program**
 
-- Operations:
-  - `void displayInfo()`: Displays information about the employee.
+## Contribution
+Contribututions are welcome. Just fork the repository and submit a pull request. However, if you have any questions, reach me via email at elikemfenuksu@gmail.com
 
-### Library Class
 
-- Operations:
-  - `void addBook()`: Adds one or more books to the library.
-  - `void removeBook()`: Removes a book from the library by title.
-  - `void displayBooks()`: Displays all books currently in the library.
-  - `void searchBook()`: Searches for a book by title in the library.
-  - `void availableBooks()`: Displays books that are currently available.
-
-## Installation
-
-1. Clone the repository:
-```
-git clone https://github.com/MVRK0/Library_Management_System.git
-```
-2. Compile and run the files.
-
-## Contributing and Suggestions
-If you have any questions or suggestions, please contact me via email at elikemfenuksu@gmail.com.
-As an alternative, fork the repo, clone it locally, create a new branch for your contribution or bug fix then make your changes and push them to the forked repo.
-After, create a pull request from the forked repo to the OG one.
-
-## Your Questions and Contributions are always Welcome.
