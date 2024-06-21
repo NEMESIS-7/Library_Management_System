@@ -88,7 +88,6 @@ The Library Management System is a simple Java-based console application designe
   - `void removeBook()`: Removes a book from the library by title.
   - `void displayBooks()`: Displays all books currently in the library.
   - `void searchBook()`: Searches for a book by title in the library.
-  - `void availableBooks()`: Displays all books that are currently available or have been available at some point.
 
 ## Installation
 
