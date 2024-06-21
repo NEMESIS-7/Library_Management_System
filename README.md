@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The Library Management System is a simple Java-based application designed to manage a collection of books and members within a library. It allows for adding, removing, borrowing, and returning books, as well as managing member information. This system is intended to provide a basic framework for managing a small library and can be extended to include more advanced features as needed.
+The Library Management System is a simple Java-based console application designed to manage a collection of books and members within a library. It allows for adding, removing, borrowing, and returning books, as well as managing member information. This system is intended to provide a basic framework for managing a small library and can be extended to include more advanced features as needed.
 
 ## Features
 
