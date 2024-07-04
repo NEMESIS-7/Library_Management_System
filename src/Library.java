@@ -4,7 +4,7 @@ public class Library {
     Vector <String> library= new Vector<>();
     //method to add a book to the library
     public void addBook(){
-        System.out.println("how many book are you adding to the library?: ");
+        System.out.println("how many books are you adding to the library?: ");
         int num = input.nextInt();
         //consuming the newline character
         input.nextLine();

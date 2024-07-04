@@ -2,14 +2,13 @@ public class Book {
     private String Title;
     private String author;
     private String ISBN;
-    private boolean availability;
+
 
     //constructor to initialize the variables
     public Book(String Title, String author, String ISBN) {
         this.Title = Title;
         this.author = author;
         this.ISBN = ISBN;
-        availability = true;
     }
 
     //function to set the Title of the book
@@ -43,9 +42,9 @@ public class Book {
     }
 
     //function to check availability
-    public boolean isAvailable() {
-        return availability;
-    }
+//    public boolean isAvailable() {
+//        return availability;
+//    }
 
     //displaying book info
     public void displayInformation() {
@@ -55,22 +54,22 @@ public class Book {
     }
 
     //method to check if a book has been checked out or is unavailable
-    public void borrowBook() {
-        if (availability) {
-            //updating to false since the book has been borrowed
-            availability = false;
-            System.out.println("the book has been successfully borrowed and is no longer available.");
-        }
-    }
-
-    //method to return a book
-    public void returnBook() {
-        if (!availability) {
-            //updating to true since the book has been returned
-            availability = true;
-            System.out.println("the book has been returned and is now available.");
-        }
-    }
+//    public void borrowBook() {
+//        if (availability) {
+//            //updating to false since the book has been borrowed
+//            availability = false;
+//            System.out.println("the book has been successfully borrowed and is no longer available.");
+//        }
+//    }
+//
+//    //method to return a book
+//    public void returnBook() {
+//        if (!availability) {
+//            //updating to true since the book has been returned
+//            availability = true;
+//            System.out.println("the book has been returned and is now available.");
+//        }
+//    }
 }
 //class fiction extends Book {
 //    public fiction(String Title, String author, String ISBN) {
