@@ -3,8 +3,12 @@ import java.util.*;
 public class Library1 {
     private boolean availabity = true;
     private Vector<String> library= new Vector<>();
+    public HashMap<String, Book> booksByTitle = new HashMap<>();
+    public HashMap<String, Book> booksByAuthor = new HashMap<>();
+    public HashMap<String, Book> booksByISBN = new HashMap<>();
+
     //method to add book to the library using a book object
-    public void addBook(Book book){
+    public void addBook(Book book) {
         library.add(book.getTitle());
         System.out.println(book.getTitle() + " has been added to the library");
     }
@@ -29,34 +33,23 @@ public class Library1 {
     }
     //method to display all books in the library
     public void displayBooks(){
-        for (String i : library) {
-            System.out.println(i + " is in the library");
+        if (library.isEmpty()){
+            System.out.println("there are no books in the library");
+        }else{
+            for (String i : library) {
+                System.out.println(i + " is in the library");
+            }
         }
     }
     public void borrowBook(String Title){
         for (int i = 0; i < library.size(); i++) {
             if(library.contains(Title)){
-                System.out.println("the book has been borrowed successfully");
+                System.out.println(Title.toUpperCase() + " has been borrowed successfully");
                 library.remove(i);
                 availabity = false;
                 break;
             }else{
                 System.out.println(Title + " is not available for borrowing");
-                break;
-            }
-        }
-    }
-    public void borrowBookByISBN(String ISBN) {
-
-
-        for (int i = 0; i < library.size(); i++) {
-            if (library.contains(ISBN)) {
-                System.out.println("the book has been borrowed successfully");
-                library.remove(i);
-                availabity = false;
-                break;
-            } else {
-                System.out.println(ISBN + " is not available for borrowing");
                 break;
             }
         }
@@ -82,4 +75,10 @@ public class Library1 {
             }
         }return null;
     }
+//    public void addBook(Book book) {
+//        booksByTitle.put(book.getTitle().toLowerCase(), book);
+//        booksByAuthor.put(book.getAuthor().toLowerCase(), book);
+//        booksByISBN.put(book.getISBN().toLowerCase(), book);
+//        System.out.println("Book added: " + book);
+//    }
 }

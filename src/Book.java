@@ -1,13 +1,13 @@
 public class Book {
     private String Title;
-    private String author;
+    private String Author;
     private String ISBN;
 
 
     //constructor to initialize the variables
-    public Book(String Title, String author, String ISBN) {
-        this.Title = Title;
-        this.author = author;
+    public Book(String Title, String Author, String ISBN) {
+        this.Title = Title.toLowerCase();
+        this.Author = Author.toLowerCase();
         this.ISBN = ISBN;
     }
 
@@ -21,14 +21,14 @@ public class Book {
         return Title;
     }
 
-    //function to set the author of oa book
-    public void setAuthor(String author) {
-        this.author = author;
+    //function to set the Author of oa book
+    public void setAuthor(String Author) {
+        this.Author = Author;
     }
 
-    //function to return the author
+    //function to return the Author
     public String getAuthor() {
-        return author;
+        return Author;
     }
 
     //function to set the ISBN of a book
@@ -47,9 +47,9 @@ public class Book {
 //    }
 
     //displaying book info
-    public void displayInformation() {
+    public void displayInformation(Book book) {
         System.out.println("Title: " + Title);
-        System.out.println("Author: " + author);
+        System.out.println("Author: " + Author);
         System.out.println("ISBN: " + ISBN);
     }
 
@@ -72,8 +72,8 @@ public class Book {
 //    }
 }
 //class fiction extends Book {
-//    public fiction(String Title, String author, String ISBN) {
-//        super(Title, author, ISBN);
+//    public fiction(String Title, String Author, String ISBN) {
+//        super(Title, Author, ISBN);
 //    }
 //    public void displayInformation() {
 //        System.out.println("the details of the fiction book are: ");
@@ -89,8 +89,8 @@ public class Book {
 //    }
 //}
 //class nonFiction extends Book {
-//    public nonFiction(String Title, String author, String ISBN) {
-//        super(Title, author, ISBN);
+//    public nonFiction(String Title, String Author, String ISBN) {
+//        super(Title, Author, ISBN);
 //    }
 //    public void displayInformation() {
 //        System.out.println("the details of the non-fiction book are: ");
