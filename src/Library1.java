@@ -3,7 +3,10 @@ import java.util.*;
 public class Library1 {
     private boolean availabity = true;
     private final Vector<String> library= new Vector<>();
-    public Hashtable<String, Book> library1 = new Hashtable<>();
+    private Hashtable<String, Book> library1 = new Hashtable<>();
+    private Hashtable<String, Member>members = new Hashtable<>();
+
+
 
     //method to add book to the library using a book object
     public void addBook(Book book) {
