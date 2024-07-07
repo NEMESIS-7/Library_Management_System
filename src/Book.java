@@ -7,7 +7,7 @@ public class Book {
     //constructor to initialize the variables
     public Book(String Title, String Author, String ISBN) {
         this.Title = Title.toLowerCase();
-        this.Author = Author.toLowerCase();
+        this.Author = Author.toUpperCase();
         this.ISBN = ISBN;
     }
 
