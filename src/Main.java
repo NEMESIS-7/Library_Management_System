@@ -6,18 +6,14 @@ public class Main {
        Book book3 = new Book("Tintin", "HERGE", "2232030");
 
        Library1 library = new Library1();
-       library.addBook(book);
-//       library.addBook(book1);
-//       library.addBook(book2);
-//       library.addBook(book3);
-       library.displayBooks();
-//       library.removeBook(book1);
-//       library.displayISBN();
-
-//       library.addBook("The Great Gatsby", book);
-//       library.addBook("The Dark Knight", book1);
-//       library.displayBooksByTitle();
-      // library.removeBook("The Great Gatsby");
+       library.addBook("the great gatsby", book);
+       library.addBook("the dark knight", book1);
+       library.addBook("the gentlemen", book2);
+       library.addBook("tintin", book3);
+       library.displayBooksByTitle();
+        library.searchBookByTitle("the great gatsby");
+        library.SearchBookByAuthor("HERGE");
+        library.SearchBookByISBN("2232030");
 
 
 
