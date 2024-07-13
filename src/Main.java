@@ -7,12 +7,19 @@ public class Main {
 
        Library1 library = new Library1();
        library.addBook(book);
-       library.addBook(book1);
-       library.addBook(book2);
-       library.addBook(book3);
-       //library.displayBooks();
-       library.removeBook(book1);
-       library.displayISBN();
+//       library.addBook(book1);
+//       library.addBook(book2);
+//       library.addBook(book3);
+       library.displayBooks();
+//       library.removeBook(book1);
+//       library.displayISBN();
+
+//       library.addBook("The Great Gatsby", book);
+//       library.addBook("The Dark Knight", book1);
+//       library.displayBooksByTitle();
+      // library.removeBook("The Great Gatsby");
+
+
 
 
 
