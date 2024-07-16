@@ -33,7 +33,7 @@ public class Library1 {
             System.out.println("the book with title: " + title + " is not in the library");
         }
     }
-    public void SearchBookByAuthor(String author) {
+    public void searchBookByAuthor(String author) {
         boolean found = false;
         for (Map.Entry<String, Book> entry : library1.entrySet()) {
             if (entry.getValue().getAuthor().equals(author)) {
@@ -46,7 +46,7 @@ public class Library1 {
             System.out.println("the book with author: " + author + " is not in the library");
         }
     }
-    public void SearchBookByISBN(String number) {
+    public void searchBookByISBN(String number) {
         boolean found = false;
         for (Map.Entry<String, Book> entry : library1.entrySet()) {
             if (entry.getValue().getISBN().equals(number)) {
@@ -59,14 +59,27 @@ public class Library1 {
             System.out.println("the book with ISBN: " + number + " is not in the library");
         }
     }
-    public void removeBookByTitle(String Title) {
+
+    public void removeBookByTitle(String title) {
+        if (library1.containsKey(title)) {
+            library1.remove(title);
+            System.out.println(title + " has been removed from the library");
+        }else{
+            System.out.println("the book with title: " + title + " is not in the library");
+        }
+    }
+    public void removeBookByAuthor(String author) {
+        boolean found = false;
         for (Map.Entry<String, Book> entry : library1.entrySet()) {
-            if (entry.getValue().getTitle().equals(Title)) {
-                library1.remove(entry.getKey());
-            }else{
-                System.out.println(Title + " is not in the library");
+            Book book = entry.getValue();
+            if (){
+
             }
         }
+        if (!found) {
+            System.out.println("the book with author: " + author + " is not in the library");
+        }
+
     }
     public void removeBook(String Title) {
         if (library1.containsKey(Title)) {

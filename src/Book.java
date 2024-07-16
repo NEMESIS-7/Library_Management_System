@@ -41,11 +41,6 @@ public class Book {
         return ISBN;
     }
 
-    //function to check availability
-//    public boolean isAvailable() {
-//        return availability;
-//    }
-
     //displaying book info
     public void displayInformation(Book book) {
         System.out.println("Title: " + Title);

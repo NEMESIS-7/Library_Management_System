@@ -11,13 +11,13 @@ public class Main {
        library.addBook("the gentlemen", book2);
        library.addBook("tintin", book3);
        library.displayBooksByTitle();
-        library.searchBookByTitle("the great gatsby");
-        library.SearchBookByAuthor("HERGE");
-        library.SearchBookByISBN("2232030");
-
-
-
-
+       library.searchBookByTitle("the great gatsby");
+       library.searchBookByAuthor("HERGE");
+       library.searchBookByISBN("2232030");
+       library.removeBookByTitle("the great gatsby");
+       library.displayBooksByTitle();
+       library.removeBookByAuthor("MATTHEW MCCOUNAGHEY");
+       library.displayBooksByTitle();
 
     }
 }
