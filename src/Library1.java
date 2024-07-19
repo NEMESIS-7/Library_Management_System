@@ -2,13 +2,13 @@ import java.util.*;
 
 public class Library1 {
     private boolean availabity = true;
-    private final Vector<Book> library= new Vector<>();
+   // private final Vector<Book> library= new Vector<>();
     private final Hashtable<String, Book> library1 = new Hashtable<>();
    // private final Hashtable<String, Member> members = new Hashtable<>();
 
-    public void add(Book book) {
-        library.add(book);
-    }
+//    public void add(Book book) {
+//        library.add(book);
+//    }
 
     //method to add book to the library using a book object
     public void addBook(String Title, Book book) {
@@ -70,17 +70,23 @@ public class Library1 {
     }
     public void removeBookByAuthor(String author) {
         boolean found = false;
-        for (Map.Entry<String, Book> entry : library1.entrySet()) {
-            Book book = entry.getValue();
-            if (){
+        Iterator<Map.Entry<String, Book>> iterator = library1.entrySet().iterator();
 
+        while (iterator.hasNext()) {
+            Map.Entry<String, Book> entry = iterator.next();
+            if (entry.getValue() != null && entry.getValue().getAuthor().equals(author)) {
+                iterator.remove();
+                System.out.println("Book with author: " + author + " titled " + entry.getValue().getTitle() + " has been removed from the library");
+                found = true;
+                break;
             }
         }
-        if (!found) {
-            System.out.println("the book with author: " + author + " is not in the library");
-        }
 
+        if (!found) {
+            System.out.println("The book with author: " + author + " is not in the library");
+        }
     }
+
     public void removeBook(String Title) {
         if (library1.containsKey(Title)) {
             library1.remove(Title);
@@ -98,48 +104,48 @@ public class Library1 {
 ////        System.out.println(book.getAuthor());
 //    }
     //method to remove a book from the library
-    public void removeBook(Book book){
-        for (int i = 0; i < library.size(); i++) {
-            if (library.contains(book.getTitle())){
-                library.remove(library.get(i));
-                System.out.println(book.getTitle() + " has been removed from the library");
-                System.out.println(book.getISBN());
-                break;
-            }else{
-                System.out.println(book.getTitle() + " was never in the library");
-                break;
-            }
-        }
-    }
-    public void displayISBN(){
-        for (int i = 0; i < library.size(); i++) {
-            System.out.println();
-        }
-    }
+//    public void removeBook(Book book){
+//        for (int i = 0; i < library.size(); i++) {
+//            if (library.contains(book.getTitle())){
+//                library.remove(library.get(i));
+//                System.out.println(book.getTitle() + " has been removed from the library");
+//                System.out.println(book.getISBN());
+//                break;
+//            }else{
+//                System.out.println(book.getTitle() + " was never in the library");
+//                break;
+//            }
+//        }
+//    }
+//    public void displayISBN(){
+//        for (int i = 0; i < library.size(); i++) {
+//            System.out.println();
+//        }
+//    }
     //method to check for the availability of a book
-    public void isAvailable(String Title){
-        for (int i = 0; i < library.size(); i++) {
-            if(library.contains(Title.toLowerCase())){
-                availabity = true;
-                System.out.println(Title + " is available.");
-                break;
-            }else{
-                availabity = false;
-                System.out.println(Title + " is not available.");
-                break;
-            }
-        }
-    }
-    //method to display all books in the library
-    public void displayBooks(){
-        if (library.isEmpty()){
-            System.out.println("there are no books in the library");
-        }else{
-            for (Book i : library) {
-                System.out.println(i.getTitle() + " is in the library");
-            }
-        }
-    }
+//    public void isAvailable(String Title){
+//        for (int i = 0; i < library.size(); i++) {
+//            if(library.contains(Title.toLowerCase())){
+//                availabity = true;
+//                System.out.println(Title + " is available.");
+//                break;
+//            }else{
+//                availabity = false;
+//                System.out.println(Title + " is not available.");
+//                break;
+//            }
+//        }
+//    }
+//    //method to display all books in the library
+//    public void displayBooks(){
+//        if (library.isEmpty()){
+//            System.out.println("there are no books in the library");
+//        }else{
+//            for (Book i : library) {
+//                System.out.println(i.getTitle() + " is in the library");
+//            }
+//        }
+//    }
 //    public void borrowBook(String Title){
 //        for (int i = 0; i < library.size(); i++) {
 //            if(library.contains(Title.toLowerCase())){

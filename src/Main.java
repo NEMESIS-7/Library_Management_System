@@ -17,6 +17,7 @@ public class Main {
        library.removeBookByTitle("the great gatsby");
        library.displayBooksByTitle();
        library.removeBookByAuthor("MATTHEW MCCOUNAGHEY");
+       library.removeBook("the dark knight");
        library.displayBooksByTitle();
 
     }
