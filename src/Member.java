@@ -4,6 +4,8 @@ public class Member {
     private String ID;
     private String Name;
     private String Email;
+    private String Password;
+    private String Role;
 
     public String getID() {
         return ID;
@@ -20,29 +22,45 @@ public class Member {
     public String getEmail() {
         return Email;
     }
-
     public void setEmail(String email) {
         this.Email = email;
     }
-        //displaying member information
+    public void setPassword(String password) {
+        this.Password = password;
+    }
+    public String getPassword() {
+        return Password;
+    }
+    public String getRole() {
+        return Role;
+    }
+    public void setRole(String role) {
+        this.Role = role;
+    }
+
+
+    //displaying member information
 
     public void displayInfo(){
         System.out.println("Name: " + Name);
         System.out.println("ID: " + ID);
         System.out.println("Email: " + Email);
+        System.out.println("Role: " + Role);
     }
 
     //constructor
-    public Member(String name, String ID, String email) {
+    public Member(String name, String ID, String email, String role) {
         this.ID = ID;
         this.Name = name;
         this.Email = email;
+        this.Role = role;
+
     }
 }
 
 class Reader extends Member{
-   public Reader(String name, String ID, String email) {
-       super(name, ID, email); //constructor
+   public Reader(String name, String ID, String email, String role) {
+       super(name, ID, email, role); //constructor
    }
 
    //displaying reader information
@@ -62,9 +80,9 @@ class Employee extends Member{
         this.employeeID = employeeID;
     }
     //method to take employee information
-    public Employee(String name, String ID, String email) {
-        super(name, ID, email);        //calling the constructor of the super class member
-        //System.out.println("enter your employee ID: ");
+    public Employee(String name, String ID, String email, String role) {
+        super(name, ID, email, role);        //calling the constructor of the super class member
+        System.out.println("enter your employee ID: ");
         this.employeeID = input.nextLine();
 
     }
