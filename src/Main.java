@@ -4,7 +4,7 @@ public class Main {
        System.out.println("=                 Welcome To Nemesis Library Systems                   =");
        System.out.println("We have");
         int num = 0x7F;
-        System.out.println("The number is " + num);
-        St
+        System.out.println(STR."The number is \{num}");
+
     }
 }

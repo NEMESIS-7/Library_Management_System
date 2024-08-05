@@ -1,7 +1,6 @@
 import java.util.*;
 
-public class Library1 {
-//    private boolean found = false;
+public class DB {
     private final Hashtable<String, Book> db = new Hashtable<>();
 
   //method to add book to the library using a book object
@@ -78,7 +77,6 @@ public class Library1 {
             System.out.println("The book with author: " + author + " is not in the library");
         }
     }
-
     public void removeBook(String Title) {
         if (db.containsKey(Title)) {
             db.remove(Title);
