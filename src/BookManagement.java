@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DB {
+public class BookManagement {
     private final Hashtable<String, Book> db = new Hashtable<>();
 
   //method to add book to the library using a book object
