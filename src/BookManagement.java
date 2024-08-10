@@ -72,7 +72,6 @@ public class BookManagement {
                 break;
             }
         }
-
         if (!found) {
             System.out.println("The book with author: " + author + " is not in the library");
         }

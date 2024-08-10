@@ -47,6 +47,10 @@ public class Book {
         System.out.println("Author: " + Author);
         System.out.println("ISBN: " + ISBN);
     }
+    @Override
+    public String toString() {
+        return "Search REsults: [Title: " + Title + ", Author: " + Author + ", ISBN" + ISBN+ "]";
+    }
 
     //method to check if a book has been checked out or is unavailable
 //    public void borrowBook() {

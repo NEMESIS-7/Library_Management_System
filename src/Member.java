@@ -56,6 +56,11 @@ public class Member {
         this.Role = role;
 
     }
+
+    @Override
+    public String toString() {
+        return "Search Results: [name: " + Name + ", id: " + ID + ", email: " + Email + ", role: " + Role + "]";
+    }
 }
 
 class Reader extends Member{
