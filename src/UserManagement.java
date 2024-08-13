@@ -1,5 +1,5 @@
 import java.util.*;
-public class MemberManagement {
+public class UserManagement {
     private final Hashtable<Integer, Member> members = new Hashtable<>();
 
     public void addMember(int ID, Member member) {
@@ -7,26 +7,27 @@ public class MemberManagement {
     }
 
     public void displayMembers() {
-        for (Map.Entry<Integer, Member> entry : members.entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue().getName());
+        for (Member member : members.values()) {
+            System.out.println("Name: " + member.getName() + ", ID: " + member.getID() + ", Role: " + member.getRole() + '.');
         }
     }
 
-    public Member searchMemberByID(String ID) {
+    public Member searchByID(String ID) {
         for(Map.Entry<Integer, Member> entry : members.entrySet()) {
             if(entry.getValue().getID().equals(ID)) {
                 return entry.getValue();
             }
-        }throw new RuntimeException("member not found");
+        }
+        return null;
     }
 
-    public Member searchMemberByName(String name) {
+    public Member searchByName(String name) {
         for (Member member : members.values()) {
             if (member.getName().equals(name)) {
                 return member;
             }
         }
-        throw new RuntimeException("no member found with name: " + name);
+        return null;
     }
 
     /*public void showRoles(String role) {

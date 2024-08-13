@@ -59,7 +59,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Search Results: [name: " + Name + ", id: " + ID + ", email: " + Email + ", role: " + Role + "]";
+        return "Search Results: Name: " + Name + ", ID: " + ID + ", Email: " + Email + ", Role: " + Role;
     }
 }
 
