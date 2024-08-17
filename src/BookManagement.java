@@ -4,9 +4,10 @@ public class BookManagement {
     private final Hashtable<String, Book> db = new Hashtable<>();
 
   //method to add book to the library using a book object
-    public void addBook(String Title, Book book) {
-        db.put(Title, book);
-        System.out.println(Title + " has been added to the library");
+    public void addBook(String ISBN, Book book) {
+        db.put(ISBN, book);
+        String title = book.getTitle();
+        System.out.println(title + " has been added to the library");
     }
     public void dislpayMapping(){
         for( Map.Entry<String, Book> book : db.entrySet()){
@@ -18,13 +19,13 @@ public class BookManagement {
             System.out.println(entry.getKey() + " - " + entry.getValue().getAuthor() + ", ISBN: " + entry.getValue().getISBN());
         }
     }
-    public void searchBookByTitle(String title) {
-        Book book = db.get(title);
-        if (book != null) {
-            System.out.println("book with title: " + title + ", author: " + book.getAuthor() + ", ISBN: " + book.getISBN() + " is in the library");
-        } else {
-            System.out.println("the book with title: " + title + " is not in the library");
+    public Book searchByTitle(String title) {
+        for(Map.Entry<String, Book> entry : db.entrySet()) {
+            if(entry.getValue().getTitle().equals(title)) {
+                return entry.getValue();
+            }
         }
+        return null;
     }
     public void searchBookByAuthor(String author) {
         boolean found = false;

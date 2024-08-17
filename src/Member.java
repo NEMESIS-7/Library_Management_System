@@ -78,6 +78,7 @@ class Reader extends Member{
 
 class Employee extends Member{
     private String employeeID;
+
     public String getEmployeeID() {
         return employeeID;
     }
