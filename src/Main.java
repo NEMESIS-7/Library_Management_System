@@ -13,22 +13,12 @@ public class Main {
       management.addMember(3, member2);
       management.addMember(4, member3);
       Member nameSearch = management.searchByName("Maverick");
-      if (nameSearch != null) {
-        System.out.println(nameSearch.getName());
-      }
-      System.out.println("member not found");
-      Member idSearch = management.searchByID("1");
-      if (idSearch != null) {
-        System.out.println(idSearch.getID());
-      }
-      System.out.println("member not found");
-
+      System.out.println(nameSearch != null ? nameSearch : "Member not found");
+      Member idSearch = management.searchByID("8895554");
+      System.out.println(idSearch != null ? idSearch : "Member not found");
       management.showLibrarians();
       management.showEmails();
-      Member searchMember = management.searchByName("Maverick");
-      System.out.println(searchMember);
       management.displayMembers();
-
 
       Book book = new Book("The Great Gatsby", "Maverick", "220325");
       Book book1 = new Book("The Dark Knight", "OJ Simpson", "2203256");
@@ -40,14 +30,7 @@ public class Main {
       bookManagement.addBook(book2.getISBN(), book2);
       bookManagement.addBook(book3.getISBN(), book3);
       bookManagement.displayBooksByTitle();
-      Book bookSearch = bookManagement.searchByTitle("the eat gatsby");
-      if(bookSearch == null){
-        System.out.println("The book was not found");
-      }else{
-        System.out.println(bookSearch);
-      }
-
-
-
+      Book bookSearch = bookManagement.searchByTitle("the great gatsby");
+      System.out.println(bookSearch != null ? bookSearch : "The book was not found" );
     }
 }

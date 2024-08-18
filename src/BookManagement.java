@@ -16,7 +16,7 @@ public class BookManagement {
     }
     public void displayBooksByTitle() {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue().getAuthor() + ", ISBN: " + entry.getValue().getISBN());
+            System.out.println("ISBN: " + entry.getKey() + " - " + "Book: " + entry.getValue().getTitle() + ", written by " + entry.getValue().getAuthor());
         }
     }
     public Book searchByTitle(String title) {
