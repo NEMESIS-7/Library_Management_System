@@ -1,9 +1,11 @@
 import java.util.*;
 public class UserManagement {
-    private final Hashtable<Integer, Member> members = new Hashtable<>();
+    private final Hashtable<String, Member> members = new Hashtable<>();
 
-    public void addMember(int ID, Member member) {
+    public void addMember(String ID, Member member) {
+        String name = member.getName();
         members.put(ID, member);
+        System.out.println(name + " added to the table");
     }
 
     public void displayMembers() {
@@ -13,7 +15,7 @@ public class UserManagement {
     }
 
     public Member searchByID(String ID) {
-        for(Map.Entry<Integer, Member> entry : members.entrySet()) {
+        for(Map.Entry<String, Member> entry : members.entrySet()) {
             if(entry.getValue().getID().equals(ID)) {
                 return entry.getValue();
             }
@@ -32,7 +34,7 @@ public class UserManagement {
 
     /*public void showRoles(String role) {
         boolean found = false;
-        for (Map.Entry<Integer, Member> entry : members.entrySet()) {
+        for (Map.Entry<String, Member> entry : members.entrySet()) {
             if (entry.getValue().getRole().equals(role)) {
                 System.out.println(entry.getKey() + " " + entry.getValue().getName() + " " + entry.getValue().getRole());
                 found = true;
@@ -43,12 +45,12 @@ public class UserManagement {
         }
     }*/
     public void showEmails(){
-        for (Map.Entry<Integer, Member> entry : members.entrySet()) {
+        for (Map.Entry<String, Member> entry : members.entrySet()) {
             System.out.println(entry.getValue().getEmail() + ": " + entry.getValue().getName());
         }
     }
     public void showLibrarians() {
-        for (Map.Entry<Integer, Member> entry : members.entrySet()) {
+        for (Map.Entry<String, Member> entry : members.entrySet()) {
             if (entry.getValue().getRole().equals("Librarian")) {
                 System.out.println(entry.getValue().getRole() + ": " + entry.getValue().getName());
             }

@@ -8,10 +8,10 @@ public class Main {
       Member member3 = new Member("Lucien Castle", "2215059", "luciencastle@gmail.com", "Librarian");
 
       UserManagement management = new UserManagement();
-      management.addMember(1, member);
-      management.addMember(2, member1);
-      management.addMember(3, member2);
-      management.addMember(4, member3);
+      management.addMember(member.getID(), member);
+      management.addMember(member1.getID(), member1);
+      management.addMember(member2.getID(), member2);
+      management.addMember(member3.getID(), member3);
       Member nameSearch = management.searchByName("Maverick");
       System.out.println(nameSearch != null ? nameSearch : "Member not found");
       Member idSearch = management.searchByID("8895554");
