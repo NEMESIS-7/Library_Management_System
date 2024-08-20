@@ -1,6 +1,6 @@
 import java.util.*;
 public class UserManagement {
-    private final Hashtable<String, Member> members = new Hashtable<>();
+    private final HashMap<String, Member> members = new HashMap<>();
 
     public void addMember(String ID, Member member) {
         String name = member.getName();

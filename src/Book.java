@@ -47,60 +47,61 @@ public class Book {
         System.out.println("Author: " + Author);
         System.out.println("ISBN: " + ISBN);
     }
+
     @Override
     public String toString() {
-        return "Search Results: Title: " + Title + ", Author: " + Author + ", ISBN: " + ISBN ;
+        return "Search Results: Title: " + Title + ", Author: " + Author + ", ISBN: " + ISBN;
+    }
+}
+/* method to check if a book has been checked out or is unavailable
+    public void borrowBook() {
+        if (availability) {
+            //updating to false since the book has been borrowed
+            availability = false;
+            System.out.println("the book has been successfully borrowed and is no longer available.");
+        }
     }
 
-    //method to check if a book has been checked out or is unavailable
-//    public void borrowBook() {
-//        if (availability) {
-//            //updating to false since the book has been borrowed
-//            availability = false;
-//            System.out.println("the book has been successfully borrowed and is no longer available.");
-//        }
-//    }
-//
-//    //method to return a book
-//    public void returnBook() {
-//        if (!availability) {
-//            //updating to true since the book has been returned
-//            availability = true;
-//            System.out.println("the book has been returned and is now available.");
-//        }
-//    }
+    //method to return a book
+    public void returnBook() {
+        if (!availability) {
+            //updating to true since the book has been returned
+            availability = true;
+            System.out.println("the book has been returned and is now available.");
+        }
+    }
 }
-//class fiction extends Book {
-//    public fiction(String Title, String Author, String ISBN) {
-//        super(Title, Author, ISBN);
-//    }
-//    public void displayInformation() {
-//        System.out.println("the details of the fiction book are: ");
-//        super.displayInformation();
-//    }
-//    public void borrowBook() {
-//        super.borrowBook();
-//        System.out.println("you have borrowed the fiction book successfully.");
-//    }
-//    public void returnBook() {
-//        super.returnBook();
-//        System.out.println("you have returned the fiction book successfully.");
-//    }
-//}
-//class nonFiction extends Book {
-//    public nonFiction(String Title, String Author, String ISBN) {
-//        super(Title, Author, ISBN);
-//    }
-//    public void displayInformation() {
-//        System.out.println("the details of the non-fiction book are: ");
-//        super.displayInformation();
-//    }
-//    public void borrowBook() {
-//        super.borrowBook();
-//        System.out.println("you have borrowed the non-fiction book successfully.");
-//    }
-//    public void returnBook() {
-//        super.returnBook();
-//        System.out.println("you have returned the non-fiction book successfully.");
-//    }
-//}
+class fiction extends Book {
+    public fiction(String Title, String Author, String ISBN) {
+        super(Title, Author, ISBN);
+    }
+    public void displayInformation() {
+        System.out.println("the details of the fiction book are: ");
+        super.displayInformation();
+    }
+    public void borrowBook() {
+        super.borrowBook();
+        System.out.println("you have borrowed the fiction book successfully.");
+    }
+    public void returnBook() {
+        super.returnBook();
+        System.out.println("you have returned the fiction book successfully.");
+    }
+}
+class nonFiction extends Book {
+    public nonFiction(String Title, String Author, String ISBN) {
+        super(Title, Author, ISBN);
+    }
+    public void displayInformation() {
+        System.out.println("the details of the non-fiction book are: ");
+        super.displayInformation();
+    }
+    public void borrowBook() {
+        super.borrowBook();
+        System.out.println("you have borrowed the non-fiction book successfully.");
+    }
+    public void returnBook() {
+        super.returnBook();
+        System.out.println("you have returned the non-fiction book successfully.");
+    }
+} */

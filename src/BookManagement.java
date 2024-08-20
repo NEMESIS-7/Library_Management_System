@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class BookManagement {
-    private final Hashtable<String, Book> db = new Hashtable<>();
+    private final HashMap<String, Book> db = new HashMap<>();
 
   //method to add book to the library using a book object
     public void addBook(String ISBN, Book book) {
