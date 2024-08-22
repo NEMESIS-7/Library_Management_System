@@ -6,7 +6,7 @@ This project is a simple library management system that allows for the managemen
 
 ## Classes
 
-### `com.librarysystem.model.Book`
+### `Book`
 
 Represents a book in the library with attributes:
 
@@ -28,7 +28,7 @@ Represents a book in the library with attributes:
 
 **Note:** Methods for borrowing and returning books are commented out but are intended to manage book availability.
 
-### `com.librarysystem.service.BookManagement`
+### `BookManagement`
 
 Handles operations related to managing books in the library:
 
@@ -42,7 +42,7 @@ Handles operations related to managing books in the library:
 - `void removeBookByAuthor(String author)`: Removes a book from the library by its author.
 - `void removeBook(String Title)`: Removes a book from the library by its title.
 
-### `com.librarysystem.model.Member`
+### `Member`
 
 Represents a library member with attributes:
 
@@ -63,7 +63,7 @@ Represents a library member with attributes:
 - `void displayInfo()`: Displays the member's information.
 - `String toString()`: Returns a string representation of the member.
 
-### `com.librarysystem.model.Reader`
+### `Reader`
 
 Extends `com.librarysystem.model.Member` to represent library readers:
 
@@ -80,7 +80,7 @@ Extends `com.librarysystem.model.Member` to represent library employees:
 
 **Note:** The `Fiction` and `NonFiction` classes are defined but commented out and are not currently included in the project.
 
-### `com.librarysystem.service.UserManagement`
+### `UserManagement`
 
 Handles operations related to managing library members:
 
@@ -91,7 +91,7 @@ Handles operations related to managing library members:
 - `void showEmails()`: Displays the email addresses of all members along with their names.
 - `void showLibrarians()`: Displays the names and roles of all members who are librarians.
 
-### `com.librarysystem.Main`
+### `Main`
 
 The entry point of the application that provides an interactive console-based menu for managing members and books. Includes the following functionalities:
 
@@ -117,7 +117,7 @@ The entry point of the application that provides an interactive console-based me
 
 ## Usage
 
-Run the `com.librarysystem.Main` class to start the application. Follow the on-screen menu options to manage members and books, or view information.
+Run the `Main` class to start the application. Follow the on-screen menu options to manage members and books, or view information.
 
 ## Contributing
 
