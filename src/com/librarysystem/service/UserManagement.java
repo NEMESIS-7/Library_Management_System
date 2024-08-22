@@ -1,3 +1,7 @@
+package com.librarysystem.service;
+
+import com.librarysystem.model.Member;
+
 import java.util.*;
 public class UserManagement {
     private final HashMap<String, Member> members = new HashMap<>();
@@ -34,7 +38,7 @@ public class UserManagement {
 
     /*public void showRoles(String role) {
         boolean found = false;
-        for (Map.Entry<String, Member> entry : members.entrySet()) {
+        for (Map.Entry<String, com.librarysystem.model.Member> entry : members.entrySet()) {
             if (entry.getValue().getRole().equals(role)) {
                 System.out.println(entry.getKey() + " " + entry.getValue().getName() + " " + entry.getValue().getRole());
                 found = true;

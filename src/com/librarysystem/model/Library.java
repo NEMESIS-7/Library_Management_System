@@ -1,3 +1,5 @@
+package com.librarysystem.model;
+
 import java.util.*;
 public class Library {
     Scanner input = new Scanner(System.in);

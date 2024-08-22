@@ -1,3 +1,5 @@
+package com.librarysystem.model;
+
 public class Book {
     private String Title;
     private String Author;
@@ -6,8 +8,8 @@ public class Book {
 
     //constructor to initialize the variables
     public Book(String Title, String Author, String ISBN) {
-        this.Title = Title.toLowerCase();
-        this.Author = Author.toUpperCase();
+        this.Title = Title;
+        this.Author = Author;
         this.ISBN = ISBN;
     }
 
@@ -71,7 +73,7 @@ public class Book {
         }
     }
 }
-class fiction extends Book {
+class fiction extends com.librarysystem.model.Book {
     public fiction(String Title, String Author, String ISBN) {
         super(Title, Author, ISBN);
     }
@@ -88,7 +90,7 @@ class fiction extends Book {
         System.out.println("you have returned the fiction book successfully.");
     }
 }
-class nonFiction extends Book {
+class nonFiction extends com.librarysystem.model.Book {
     public nonFiction(String Title, String Author, String ISBN) {
         super(Title, Author, ISBN);
     }

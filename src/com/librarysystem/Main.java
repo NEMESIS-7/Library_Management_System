@@ -1,10 +1,17 @@
+package com.librarysystem;
+
+import com.librarysystem.model.Book;
+import com.librarysystem.model.Member;
+import com.librarysystem.service.BookManagement;
+import com.librarysystem.service.UserManagement;
+
 import java.util.*;
 
 public class Main {
 
-  private static final Scanner input = new Scanner(System.in);
-  private static final UserManagement userManagement = new UserManagement();
-  private static final BookManagement bookManagement = new BookManagement();
+   static Scanner input = new Scanner(System.in);
+   static UserManagement userManagement = new UserManagement();
+   static BookManagement bookManagement = new BookManagement();
 
   public static void main(String[] args) {
     boolean exit = false;

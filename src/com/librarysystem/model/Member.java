@@ -1,3 +1,5 @@
+package com.librarysystem.model;
+
 import java.util.*;
 public class Member {
     Scanner input = new Scanner(System.in);
@@ -71,7 +73,7 @@ class Reader extends Member{
    //displaying reader information
     @Override
     public void displayInfo(){
-        System.out.println("Reader information:  ");
+        System.out.println("com.librarysystem.model.Reader information:  ");
         super.displayInfo();
     }
 }
@@ -95,7 +97,7 @@ class Employee extends Member{
     //method  to display user information
     @Override
     public void displayInfo(){
-        System.out.println("Employee information:  ");
+        System.out.println("com.librarysystem.model.Employee information:  ");
         super.displayInfo();
 
     }

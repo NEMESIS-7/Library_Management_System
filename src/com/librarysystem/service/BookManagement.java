@@ -1,3 +1,7 @@
+package com.librarysystem.service;
+
+import com.librarysystem.model.Book;
+
 import java.util.*;
 
 public class BookManagement {
@@ -15,8 +19,12 @@ public class BookManagement {
         }
     }
     public void displayBooksByTitle() {
-        for (Map.Entry<String, Book> entry : db.entrySet()) {
-            System.out.println("ISBN: " + entry.getKey() + " - " + "Book: " + entry.getValue().getTitle() + ", written by " + entry.getValue().getAuthor());
+        if(db.isEmpty()){
+            System.out.println("There are no books in the library");
+        }else{
+            for (Map.Entry<String, Book> entry : db.entrySet()) {
+                System.out.println("ISBN: " + entry.getKey() + " - " + "com.librarysystem.model.Book: " + entry.getValue().getTitle() + ", written by " + entry.getValue().getAuthor());
+            }
         }
     }
     public Book searchByTitle(String title) {
@@ -68,7 +76,7 @@ public class BookManagement {
             Map.Entry<String, Book> entry = iterator.next();
             if (entry.getValue() != null && entry.getValue().getAuthor().equals(author)) {
                 iterator.remove();
-                System.out.println("Book with author: " + author + " titled " + entry.getValue().getTitle() + " has been removed from the library");
+                System.out.println("com.librarysystem.model.Book with author: " + author + " titled " + entry.getValue().getTitle() + " has been removed from the library");
                 found = true;
                 break;
             }
