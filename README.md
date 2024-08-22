@@ -12,18 +12,18 @@ Represents a book in the library with attributes:
 
 - `Title`: The title of the book.
 - `Author`: The author of the book.
-- `ISBN`: The International Standard com.librarysystem.model.Book Number of the book.
+- `ISBN`: The International Standard Book Number of the book.
 
 #### Methods
 
-- `com.librarysystem.model.Book(String Title, String Author, String ISBN)`: Constructor to initialize the book's title, author, and ISBN.
+- `Book(String Title, String Author, String ISBN)`: Constructor to initialize the book's title, author, and ISBN.
 - `void setTitle(String Title)`: Sets the title of the book.
 - `String getTitle()`: Returns the title of the book.
 - `void setAuthor(String Author)`: Sets the author of the book.
 - `String getAuthor()`: Returns the author of the book.
 - `void setISBN(String ISBN)`: Sets the ISBN of the book.
 - `String getISBN()`: Returns the ISBN of the book.
-- `void displayInformation(com.librarysystem.model.Book book)`: Displays the information of the book.
+- `void displayInformation(Book book)`: Displays the information of the book.
 - `String toString()`: Returns a string representation of the book.
 
 **Note:** Methods for borrowing and returning books are commented out but are intended to manage book availability.
@@ -32,10 +32,10 @@ Represents a book in the library with attributes:
 
 Handles operations related to managing books in the library:
 
-- `void addBook(String ISBN, com.librarysystem.model.Book book)`: Adds a book to the library.
+- `void addBook(String ISBN, Book book)`: Adds a book to the library.
 - `void dislpayMapping()`: Displays the mapping of books by their ISBN.
 - `void displayBooksByTitle()`: Displays all books by their title and author.
-- `com.librarysystem.model.Book searchByTitle(String title)`: Searches for a book by its title and returns it if found.
+- `Book searchByTitle(String title)`: Searches for a book by its title and returns it if found.
 - `void searchBookByAuthor(String author)`: Searches for books by their author and displays them.
 - `void searchBookByISBN(String number)`: Searches for a book by its ISBN and displays it.
 - `void removeBookByTitle(String title)`: Removes a book from the library by its title.
@@ -50,11 +50,11 @@ Represents a library member with attributes:
 - `Name`: The member's name.
 - `Email`: The member's email address.
 - `Password`: The member's password.
-- `Role`: The member's role (e.g., com.librarysystem.model.Reader or com.librarysystem.model.Employee).
+- `Role`: The member's role (e.g., Reader or Employee).
 
 #### Methods
 
-- `com.librarysystem.model.Member(String name, String ID, String email, String role)`: Constructor to initialize the member's details.
+- `Member(String name, String ID, String email, String role)`: Constructor to initialize the member's details.
 - `String getID()`, `void setID(String ID)`: Get and set the member's ID.
 - `String getName()`, `void setName(String name)`: Get and set the member's name.
 - `String getEmail()`, `void setEmail(String email)`: Get and set the member's email.
@@ -65,16 +65,16 @@ Represents a library member with attributes:
 
 ### `Reader`
 
-Extends `com.librarysystem.model.Member` to represent library readers:
+Extends `Member` to represent library readers:
 
-- `com.librarysystem.model.Reader(String name, String ID, String email, String role)`: Constructor to initialize the reader's details.
+- `Reader(String name, String ID, String email, String role)`: Constructor to initialize the reader's details.
 - `void displayInfo()`: Displays the reader's information.
 
-### `com.librarysystem.model.Employee`
+### `Employee`
 
-Extends `com.librarysystem.model.Member` to represent library employees:
+Extends `Member` to represent library employees:
 
-- `com.librarysystem.model.Employee(String name, String ID, String email, String role)`: Constructor to initialize the employee's details and prompts for an employee ID.
+- `Employee(String name, String ID, String email, String role)`: Constructor to initialize the employee's details and prompts for an employee ID.
 - `String getEmployeeID()`, `void setEmployeeID(String employeeID)`: Get and set the employee's ID.
 - `void displayInfo()`: Displays the employee's information.
 
@@ -84,10 +84,10 @@ Extends `com.librarysystem.model.Member` to represent library employees:
 
 Handles operations related to managing library members:
 
-- `void addMember(String ID, com.librarysystem.model.Member member)`: Adds a member to the system.
+- `void addMember(String ID, Member member)`: Adds a member to the system.
 - `void displayMembers()`: Displays all members in the system.
-- `com.librarysystem.model.Member searchByID(String ID)`: Searches for a member by their ID and returns it if found.
-- `com.librarysystem.model.Member searchByName(String name)`: Searches for a member by their name and returns it if found.
+- `Member searchByID(String ID)`: Searches for a member by their ID and returns it if found.
+- `Member searchByName(String name)`: Searches for a member by their name and returns it if found.
 - `void showEmails()`: Displays the email addresses of all members along with their names.
 - `void showLibrarians()`: Displays the names and roles of all members who are librarians.
 
@@ -96,18 +96,18 @@ Handles operations related to managing library members:
 The entry point of the application that provides an interactive console-based menu for managing members and books. Includes the following functionalities:
 
 - **Manage Members**
-    - `1. Add com.librarysystem.model.Member`: Adds a new member.
-    - `2. Search com.librarysystem.model.Member by ID`: Searches for a member by their ID.
-    - `3. Search com.librarysystem.model.Member by Name`: Searches for a member by their name.
+    - `1. Add Member`: Adds a new member.
+    - `2. Search Member by ID`: Searches for a member by their ID.
+    - `3. Search Member by Name`: Searches for a member by their name.
     - `4. Display All Members`: Displays all members.
     - `5. Return to com.librarysystem.Main Menu`: Returns to the main menu.
 
 - **Manage Books**
-    - `1. Add com.librarysystem.model.Book`: Adds a new book.
-    - `2. Search com.librarysystem.model.Book by Title`: Searches for a book by its title.
-    - `3. Search com.librarysystem.model.Book by Author`: Searches for books by their author.
+    - `1. Add Book`: Adds a new book.
+    - `2. Search Book by Title`: Searches for a book by its title.
+    - `3. Search Book by Author`: Searches for books by their author.
     - `4. Display All Books`: Displays all books.
-    - `5. Remove com.librarysystem.model.Book by Title`: Removes a book by its title.
+    - `5. Remove Book by Title`: Removes a book by its title.
     - `6. Return to com.librarysystem.Main Menu`: Returns to the main menu.
 
 - **View Information**
