@@ -39,10 +39,10 @@ public class BookManagement {
         boolean found = false;
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             if (entry.getValue().getAuthor().equals(author)) {
-                System.out.println("book with author: " + author + " has the title: " + entry.getValue().getTitle() + " and ISBN: " + entry.getValue().getISBN() + " is in the library");
+                System.out.println("The book by " + author + " is called " + entry.getValue().getTitle() + " and has ISBN: " + entry.getValue().getISBN());
                 found = true;
-                break;
             }
+            break;
         }
         System.out.println("the book with author: " + author + " is not in the library");
     }
@@ -89,9 +89,30 @@ public class BookManagement {
         if (db.containsKey(Title)) {
             db.remove(Title);
             System.out.println(Title + " has been removed from the library");
-        }else{
+        } else {
             System.out.println(Title + " does not exist in the library");
         }
 
     }
+
+    public void borrowBook(String Title) {
+        boolean available = true;
+        Book book = searchByTitle(Title);
+        if(book == null){
+            available = false;
+            System.out.println(Title + " is not available");
+        }else{
+            System.out.println(Title + " has been borrowed successfully");
+            db.remove(book.getISBN());
+        }
+    }
+
+    //method to return a book
+//    public void returnBook() {
+//        if (!availability) {
+//            //updating to true since the book has been returned
+//            availability = true;
+//            System.out.println("the book has been returned and is now available.");
+//        }
+//    }
 }
