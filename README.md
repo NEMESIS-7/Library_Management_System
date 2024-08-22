@@ -123,6 +123,3 @@ Run the `Main` class to start the application. Follow the on-screen menu options
 
 Feel free to fork the repository, make changes, and submit pull requests.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
