@@ -4,6 +4,7 @@ import com.librarysystem.model.Book;
 import com.librarysystem.service.BookManagement;
 import com.librarysystem.service.UserManagement;
 
+import javax.swing.border.TitledBorder;
 import java.util.*;
 
 
@@ -17,6 +18,12 @@ public class Main {
       Book book5 = new Book("The Dark Ages", "Black", "21336659");
       Book book6 = new Book("The Red Right Hand", "Cillian Murphy", "55269987");
       Book book7 = new Book("By Order", "Cillian Murphy", "12345");
+      Book book8 = new Book("Black Star Day", "Cillian Murphy", "5629");
+      Book book9 = new Book("Black Star Day", "Arthur Shelby", "22214474");
+      Book book10 = new Book("Black Star Day", "John Shelby", "887998");
+      Book book11 = new Book("Black Star Day", "Polly Gray", "774414");
+      Book book12 = new Book("Black Star Day", "Michael Shelby", "11012");
+
 
       BookManagement management = new BookManagement();
       UserManagement userManagement = new UserManagement();
@@ -29,20 +36,15 @@ public class Main {
       management.addBook("21336659", book5);
       management.addBook("55269987", book6);
       management.addBook("12345", book7);
+      management.addBook("5269", book8);
+      management.addBook("22214474", book9);
+      management.addBook("887998", book10);
+      management.addBook("774414", book11);
+      management.addBook("11012", book12);
 
-      management.displayBooks();
-//      Object searchResults = management.searchBook("ISBN", "22036");
-//      System.out.println(searchResults);
+      management.searchBooks("Title", "Black Star Day");
+//      management.searchBooks("Author", "Cillian Murphy");
 
-      List<Book> results = management.searchBooks("Author", "Cillian Murphy");
-      if (results != null && !results.isEmpty()) {
-        for (Book foundbook : results) {
-          System.out.println(foundbook);
-          break;
-        }
-      } else {
-        System.out.println("No results found");
-      }
 
     }
 }

@@ -52,7 +52,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Search Results: Title: " + Title + ", Author: " + Author + ", ISBN: " + ISBN;
+        return "Search Results: " + Title + ", written by " + Author + ". ISBN: " + ISBN;
     }
 }
 /* method to check if a book has been checked out or is unavailable

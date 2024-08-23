@@ -11,7 +11,7 @@ public class BookManagement {
     public void addBook(String ISBN, Book book) {
         db.put(ISBN, book);
         String title = book.getTitle();
-        System.out.println(title + " has been added to the library");
+        System.out.println(title + " written by " + book.getAuthor() +  " has been added to the library");
     }
     public void dislpayMapping(){
         for( Map.Entry<String, Book> book : db.entrySet()){
