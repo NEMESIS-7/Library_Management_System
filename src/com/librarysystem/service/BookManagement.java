@@ -1,7 +1,6 @@
 package com.librarysystem.service;
 
 import com.librarysystem.model.Book;
-import com.librarysystem.service.BorrowingRecords;
 
 import java.util.*;
 
@@ -24,7 +23,7 @@ public class BookManagement {
             System.out.println("There are no books in the library");
         }else{
             for (Map.Entry<String, Book> entry : db.entrySet()) {
-                System.out.println("ISBN: " + entry.getKey() + " - " + "com.librarysystem.model.Book: " + entry.getValue().getTitle() + ", written by " + entry.getValue().getAuthor());
+                System.out.println("ISBN: " + entry.getKey() + " - " + entry.getValue().getTitle() + ", written by " + entry.getValue().getAuthor());
             }
         }
     }
@@ -43,7 +42,23 @@ public class BookManagement {
         return null;
     }
 
-    public void removeBook (String attribute, String query){
+    public List<Book> searchBooks(String attribute, String query){
+        for (Map.Entry<String, Book> entry : db.entrySet()) {
+            List<Book> searchResults = new ArrayList<>();
+            Book book = entry.getValue();
+            if(attribute.equals("Title") && book.getTitle().equals(query)){
+                searchResults.add(book);
+            }else if(attribute.equals("Author") && book.getAuthor().equals(query)){
+                searchResults.add(book);
+            }else if(attribute.equals("ISBN") && book.getISBN().equals(query)){
+                searchResults.add(book);
+            }
+            return searchResults;
+        }
+        System.out.println("There is no book with " + attribute + " in the library");
+        return null;
+    }
+/*    public void removeBook (String attribute, String query){
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
             if(attribute.equals("ISBN") && book.getISBN().equals(query)){
@@ -56,7 +71,7 @@ public class BookManagement {
                 System.out.println("There is no book with " + attribute + " in the library");
             }
         }
-    }
+    }*/
     public void removeBookByTitle(String title) {
         if (db.containsKey(title)) {
             db.remove(title);
@@ -65,37 +80,42 @@ public class BookManagement {
             System.out.println("the book with title: " + title + " is not in the library");
         }
     }
-    public void removeBookByAuthor(String author) {
+    public void removeBook(String attribute, String query) {
         boolean found = false;
+        boolean removed = false;
         Iterator<Map.Entry<String, Book>> iterator = db.entrySet().iterator();
-
         while (iterator.hasNext()) {
             Map.Entry<String, Book> entry = iterator.next();
-            if (entry.getValue() != null && entry.getValue().getAuthor().equals(author)) {
+            Book book = entry.getValue();
+            boolean match = false;
+            switch (attribute.toLowerCase()) {
+                case "title":
+                    match = book.getTitle().equals(query);
+                    break;
+                case "author":
+                    match = book.getAuthor().equals(query);
+                    break;
+                case "isbn":
+                    match = book.getISBN().equals(query);
+                default:
+                    System.out.println("Invalid");
+            }
+            if(match){
                 iterator.remove();
-                System.out.println("com.librarysystem.model.Book with author: " + author + " titled " + entry.getValue().getTitle() + " has been removed from the library");
-                found = true;
+                System.out.println(book.getTitle() + " has been removed from the library");
+                removed = true;
                 break;
             }
         }
-        if (!found) {
-            System.out.println("The book with author: " + author + " is not in the library");
+        if(!removed){
+            System.out.println("There is no book with " + attribute + ": " + query + " in the library");
         }
     }
-//    public void removeBook(String Title) {
-//        if (db.containsKey(Title)) {
-//            db.remove(Title);
-//            System.out.println(Title + " has been removed from the library");
-//        } else {
-//            System.out.println(Title + " does not exist in the library");
-//        }
-//
-//    }
-
     public boolean borrowBook(String Title) {
-        Book book = searchByTitle(Title);
+        Book book = searchBook(Title, "title");
         if (book != null) {
             System.out.println("The book is not available");
+            db.remove(book.getISBN());
             return true;
         }else{
             System.out.println(book.getTitle() + " has been borrowed successfully");

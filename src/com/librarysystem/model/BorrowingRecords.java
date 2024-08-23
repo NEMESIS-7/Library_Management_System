@@ -1,7 +1,4 @@
-package com.librarysystem.service;
-
-import com.librarysystem.model.Book;
-import com.librarysystem.service.BookManagement;
+package com.librarysystem.model;
 
 import java.time.*;
 import java.util.ArrayList;

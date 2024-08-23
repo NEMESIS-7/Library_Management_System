@@ -23,7 +23,7 @@ Represents a book in the library with attributes:
 - `String getAuthor()`: Returns the author of the book.
 - `void setISBN(String ISBN)`: Sets the ISBN of the book.
 - `String getISBN()`: Returns the ISBN of the book.
-- `void displayInformation(Book book)`: Displays the information of the book.
+- `void displayInformation Book book)`: Displays the information of the book.
 - `String toString()`: Returns a string representation of the book.
 
 **Note:** Methods for borrowing and returning books are commented out but are intended to manage book availability.
@@ -35,7 +35,7 @@ Handles operations related to managing books in the library:
 - `void addBook(String ISBN, Book book)`: Adds a book to the library.
 - `void dislpayMapping()`: Displays the mapping of books by their ISBN.
 - `void displayBooksByTitle()`: Displays all books by their title and author.
-- `Book searchByTitle(String title)`: Searches for a book by its title and returns it if found.
+-  Book searchByTitle(String title)`: Searches for a book by its title and returns it if found.
 - `void searchBookByAuthor(String author)`: Searches for books by their author and displays them.
 - `void searchBookByISBN(String number)`: Searches for a book by its ISBN and displays it.
 - `void removeBookByTitle(String title)`: Removes a book from the library by its title.
@@ -54,7 +54,7 @@ Represents a library member with attributes:
 
 #### Methods
 
-- `Member(String name, String ID, String email, String role)`: Constructor to initialize the member's details.
+-  Member(String name, String ID, String email, String role)`: Constructor to initialize the member's details.
 - `String getID()`, `void setID(String ID)`: Get and set the member's ID.
 - `String getName()`, `void setName(String name)`: Get and set the member's name.
 - `String getEmail()`, `void setEmail(String email)`: Get and set the member's email.
@@ -65,16 +65,16 @@ Represents a library member with attributes:
 
 ### `Reader`
 
-Extends `Member` to represent library readers:
+Extends  Member` to represent library readers:
 
-- `Reader(String name, String ID, String email, String role)`: Constructor to initialize the reader's details.
+-  Reader(String name, String ID, String email, String role)`: Constructor to initialize the reader's details.
 - `void displayInfo()`: Displays the reader's information.
 
-### `Employee`
+###  Employee`
 
-Extends `Member` to represent library employees:
+Extends  Member` to represent library employees:
 
-- `Employee(String name, String ID, String email, String role)`: Constructor to initialize the employee's details and prompts for an employee ID.
+-  Employee(String name, String ID, String email, String role)`: Constructor to initialize the employee's details and prompts for an employee ID.
 - `String getEmployeeID()`, `void setEmployeeID(String employeeID)`: Get and set the employee's ID.
 - `void displayInfo()`: Displays the employee's information.
 
@@ -86,8 +86,8 @@ Handles operations related to managing library members:
 
 - `void addMember(String ID, Member member)`: Adds a member to the system.
 - `void displayMembers()`: Displays all members in the system.
-- `Member searchByID(String ID)`: Searches for a member by their ID and returns it if found.
-- `Member searchByName(String name)`: Searches for a member by their name and returns it if found.
+-  Member searchByID(String ID)`: Searches for a member by their ID and returns it if found.
+-  Member searchByName(String name)`: Searches for a member by their name and returns it if found.
 - `void showEmails()`: Displays the email addresses of all members along with their names.
 - `void showLibrarians()`: Displays the names and roles of all members who are librarians.
 
