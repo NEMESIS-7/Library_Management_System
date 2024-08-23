@@ -1,10 +1,26 @@
 package com.librarysystem.service;
 
+import com.librarysystem.model.Book;
+import com.librarysystem.service.BookManagement;
+
 import java.time.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BorrowingRecords {
     private String borrowedID;
     private String memberID;
+    private List <BorrowingRecords> borrowedRecords = new ArrayList<BorrowingRecords>();
+
+    public BorrowingRecords(String borrowedID, String memberID, String ISBN, LocalDateTime returnDate, LocalDateTime borrowedDate, LocalDateTime dueDate) {
+        this.borrowedID = borrowedID;
+        this.memberID = memberID;
+        this.ISBN = ISBN;
+        this.returnDate = returnDate;
+        this.borrowedDate = borrowedDate;
+        this.dueDate = null;
+    }
+
     private String ISBN;
     private LocalDateTime borrowedDate;
     private LocalDateTime returnDate;
@@ -69,4 +85,4 @@ public class BorrowingRecords {
                 ", returnedAt=" + returnDate +
                 '}';
     }
-}
+    }
