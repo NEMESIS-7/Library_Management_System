@@ -18,7 +18,7 @@ public class BookManagement {
             System.out.println(book.getKey() + " " + book.getValue());
         }
     }
-    public void displayBooksByTitle() {
+    public void displayBooks() {
         if(db.isEmpty()){
             System.out.println("There are no books in the library");
         }else{
