@@ -87,7 +87,6 @@ public class BookManagement {
         }
     }
     public void removeBook(String attribute, String query) {
-        boolean found = false;
         boolean removed = false;
         Iterator<Map.Entry<String, Book>> iterator = db.entrySet().iterator();
         while (iterator.hasNext()) {
@@ -108,7 +107,7 @@ public class BookManagement {
             }
             if(match){
                 iterator.remove();
-                System.out.println(book.getTitle() + " has been removed from the library");
+                System.out.println(book.getTitle() + " written by " + book.getAuthor() +  " has been removed from the library");
                 removed = true;
                 break;
             }
