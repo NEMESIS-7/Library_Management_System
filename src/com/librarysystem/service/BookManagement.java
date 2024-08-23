@@ -43,8 +43,9 @@ public class BookManagement {
     }
 
     public List<Book> searchBooks(String attribute, String query){
+        List<Book> searchResults = new ArrayList<>();
+
         for (Map.Entry<String, Book> entry : db.entrySet()) {
-            List<Book> searchResults = new ArrayList<>();
             Book book = entry.getValue();
             if(attribute.equals("Title") && book.getTitle().equals(query)){
                 searchResults.add(book);
@@ -53,10 +54,15 @@ public class BookManagement {
             }else if(attribute.equals("ISBN") && book.getISBN().equals(query)){
                 searchResults.add(book);
             }
-            return searchResults;
         }
-        System.out.println("There is no book with " + attribute + " in the library");
-        return null;
+        if (searchResults.isEmpty()){
+            System.out.println("There is no book with " + attribute + " in the library");
+        }else{
+            for (Book book : searchResults){
+                System.out.println(book);
+            }
+        }
+        return searchResults;
     }
 /*    public void removeBook (String attribute, String query){
         for (Map.Entry<String, Book> entry : db.entrySet()) {
