@@ -7,34 +7,37 @@ import java.util.*;
 public class BookManagement {
     private final HashMap<String, Book> db = new HashMap<>();
 
-  //method to add book to the library using a book object
+    //method to add book to the library using a book object
     public void addBook(String ISBN, Book book) {
         db.put(ISBN, book);
         String title = book.getTitle();
-        System.out.println(title + " written by " + book.getAuthor() +  " has been added to the library");
+        System.out.println(title + " written by " + book.getAuthor() + " has been added to the library");
     }
-    public void dislpayMapping(){
-        for( Map.Entry<String, Book> book : db.entrySet()){
+
+    public void dislpayMapping() {
+        for (Map.Entry<String, Book> book : db.entrySet()) {
             System.out.println(book.getKey() + " " + book.getValue());
         }
     }
+
     public void displayBooks() {
-        if(db.isEmpty()){
+        if (db.isEmpty()) {
             System.out.println("There are no books in the library");
-        }else{
+        } else {
             for (Map.Entry<String, Book> entry : db.entrySet()) {
                 System.out.println("ISBN: " + entry.getKey() + " - " + entry.getValue().getTitle() + ", written by " + entry.getValue().getAuthor());
             }
         }
     }
-    public Book searchBook(String attribute, String query){
+
+    public Book searchBook(String attribute, String query) {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
-            if(attribute.equals("Title") && book.getTitle().equals(query)){
+            if (attribute.equals("Title") && book.getTitle().equals(query)) {
                 return book;
-            }else if(attribute.equals("Author") && book.getAuthor().equals(query)){
+            } else if (attribute.equals("Author") && book.getAuthor().equals(query)) {
                 return book;
-            }else if(attribute.equals("ISBN") && book.getISBN().equals(query)){
+            } else if (attribute.equals("ISBN") && book.getISBN().equals(query)) {
                 return book;
             }
         }
@@ -42,42 +45,43 @@ public class BookManagement {
         return null;
     }
 
-    public List<Book> searchBooks(String attribute, String query){
+    public List<Book> searchBooks(String attribute, String query) {
         List<Book> searchResults = new ArrayList<>();
 
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
-            if(attribute.equals("Title") && book.getTitle().equals(query)){
+            if (attribute.equals("Title") && book.getTitle().equals(query)) {
                 searchResults.add(book);
-            }else if(attribute.equals("Author") && book.getAuthor().equals(query)){
+            } else if (attribute.equals("Author") && book.getAuthor().equals(query)) {
                 searchResults.add(book);
-            }else if(attribute.equals("ISBN") && book.getISBN().equals(query)){
+            } else if (attribute.equals("ISBN") && book.getISBN().equals(query)) {
                 searchResults.add(book);
             }
         }
-        if (searchResults.isEmpty()){
+        if (searchResults.isEmpty()) {
             System.out.println("There is no book with " + attribute + " in the library");
-        }else{
-            for (Book book : searchResults){
+        } else {
+            for (Book book : searchResults) {
                 System.out.println(book);
             }
         }
         return searchResults;
     }
-/*    public void removeBook (String attribute, String query){
-        for (Map.Entry<String, Book> entry : db.entrySet()) {
-            Book book = entry.getValue();
-            if(attribute.equals("ISBN") && book.getISBN().equals(query)){
-                db.remove(entry.getKey());
-            }else if(attribute.equals("Title") && book.getTitle().equals(query)){
-                db.remove(entry.getKey());
-            }else if(attribute.equals("Author") && book.getAuthor().equals(query)){
-                db.remove(entry.getKey());
-            }else{
-                System.out.println("There is no book with " + attribute + " in the library");
+
+    /*    public void removeBook (String attribute, String query){
+            for (Map.Entry<String, Book> entry : db.entrySet()) {
+                Book book = entry.getValue();
+                if(attribute.equals("ISBN") && book.getISBN().equals(query)){
+                    db.remove(entry.getKey());
+                }else if(attribute.equals("Title") && book.getTitle().equals(query)){
+                    db.remove(entry.getKey());
+                }else if(attribute.equals("Author") && book.getAuthor().equals(query)){
+                    db.remove(entry.getKey());
+                }else{
+                    System.out.println("There is no book with " + attribute + " in the library");
+                }
             }
-        }
-    }*/
+        }*/
     public void removeBook(String ISBN) {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
@@ -90,6 +94,7 @@ public class BookManagement {
             }
         }
     }
+
     /*public void removeBook(String attribute, String query) {
         boolean removed = false;
         Iterator<Map.Entry<String, Book>> iterator = db.entrySet().iterator();
@@ -119,15 +124,21 @@ public class BookManagement {
             System.out.println("There is no book with " + attribute + ": " + query + " in the library");
         }
     }*/
-    public boolean borrowBook(String Title) {
-        Book book = searchBook(Title, "title");
-        if (book != null) {
-            System.out.println("The book is not available");
-            db.remove(book.getISBN());
-            return true;
-        }else{
-            System.out.println(book.getTitle() + " has been borrowed successfully");
-            return false;
+
+    public Book borrowBook(String Title, String Author) {
+        for (Map.Entry<String, Book> entry : db.entrySet()) {
+            Book book = entry.getValue();
+            if (book.getTitle().equals(Title) && book.getAuthor().equals(Author)){
+                if(book.isAvailable()){
+                    System.out.println(book.getTitle() + ", written by " + book.getAuthor() + " has been borrowed");
+                    book.setAvailable(false);
+                    return book;
+                }else{
+                    System.out.println(book.getTitle() + ", written by " + book.getAuthor() + " is not available for borrowing");
+                }
+            }
         }
+        System.out.println(Title + " written by " + Author +  " does not exist in the library");
+        return null;
     }
 }

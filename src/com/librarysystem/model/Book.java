@@ -4,8 +4,15 @@ public class Book {
     private String Title;
     private String Author;
     private String ISBN;
+    private boolean isAvailable = true;
 
 
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
     //constructor to initialize the variables
     public Book(String Title, String Author, String ISBN) {
         this.Title = Title;
