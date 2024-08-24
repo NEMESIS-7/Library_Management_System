@@ -1,5 +1,6 @@
 package com.librarysystem.service;
 
+import com.librarysystem.model.Book;
 import com.librarysystem.model.Member;
 
 import java.util.*;
@@ -21,18 +22,36 @@ public class UserManagement {
         }
     }
 
-    public Member searchByID(String ID) {
-        for(Map.Entry<String, Member> entry : members.entrySet()) {
-            if(entry.getValue().getID().equals(ID)) {
-                return entry.getValue();
+    public List<Member> searchMembers(String attribute, String query) {
+        List<Member> searchResults = new ArrayList<>();
+        for (Map.Entry<String, Member> entry : members.entrySet()) {
+            Member member = entry.getValue();
+            if (attribute.equals("Name") && member.getName().equals(query)) {
+                searchResults.add(member);
+            } else if (attribute.equals("ID") && member.getRole().equals(query)) {
+                searchResults.add(member);
+            } else if (attribute.equals("Email") && member.getEmail().equals(query)) {
+                searchResults.add(member);
             }
         }
-        return null;
+        if (searchResults.isEmpty()) {
+            switch (attribute.toLowerCase()) {
+                case "name" -> System.out.println("There is no member called " + query + " in the library");
+                case "id" -> System.out.println("There is no member with ID: " + query + " in the library");
+                case "email" -> System.out.println("There is no member with email: " + query + " in the library");
+            }
+        } else {
+            for (Member member : searchResults) {
+                System.out.println(member);
+            }
+        }
+        return searchResults;
     }
 
-    public Member searchByName(String name) {
-        for (Member member : members.values()) {
-            if (member.getName().equals(name)) {
+    public Member searchByID(String ID) {
+        for (Map.Entry<String, Member> entry : members.entrySet()) {
+            Member member = entry.getValue();
+            if (entry.getValue().getID().equals(ID)) {
                 return member;
             }
         }

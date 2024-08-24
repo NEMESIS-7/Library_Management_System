@@ -81,7 +81,12 @@ public class Main {
       userManagement.addMember("011", member11);
       userManagement.addMember("012", member12);
 
-      userManagement.displayMembers();
+//      userManagement.displayMembers();
+      Member idSearch = userManagement.searchByID("013");
+      System.out.println(idSearch);
+      if (idSearch == null) {
+        System.out.println("member not found");
+      }
 
 
 

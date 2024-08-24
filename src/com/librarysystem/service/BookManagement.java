@@ -30,18 +30,14 @@ public class BookManagement {
         }
     }
 
-    public Book searchBook(String attribute, String query) {
+    public Book searchBookByISBN(String ISBN) {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
-            if (attribute.equals("Title") && book.getTitle().equals(query)) {
-                return book;
-            } else if (attribute.equals("Author") && book.getAuthor().equals(query)) {
-                return book;
-            } else if (attribute.equals("ISBN") && book.getISBN().equals(query)) {
+            if (book.getISBN().equals(ISBN)) {
                 return book;
             }
         }
-        System.out.println("There is no book with " + attribute + " in the library");
+        System.out.println("There is no book with ISBN: " + ISBN + " in the library");
         return null;
     }
 
@@ -54,14 +50,12 @@ public class BookManagement {
                 searchResults.add(book);
             } else if (attribute.equals("Author") && book.getAuthor().equals(query)) {
                 searchResults.add(book);
-            } else if (attribute.equals("ISBN") && book.getISBN().equals(query)) {
-                searchResults.add(book);
             }
         }
         if (searchResults.isEmpty()) {
-            switch (attribute) {
+            switch (attribute.toLowerCase()) {
                 case "author" -> System.out.println("There is no book written by " + query + " in the library");
-                case "ISBN" -> System.out.println("There is no book with ISBN: " + query + " in the library");
+                case "isbn" -> System.out.println("There is no book with ISBN: " + query + " in the library");
                 case "title" -> System.out.println("There is no book titled " + query + " in the library");
             }
         } else {
