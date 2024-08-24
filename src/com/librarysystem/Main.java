@@ -44,9 +44,10 @@ public class Main {
 
 //      management.searchBooks("Title", "Black Star Day");
 //      management.removeBook("Title", "Black Star Day");
-      management.removeBook("22214474");
-//      management.displayBooks();
+      management.displayBooks();
+      management.removeBook("887998");
 //      management.searchBooks("Author", "Cillian Murphy");
+//      management.borrowBook("The Red Right Hand", "Cillian Murphy");
 
 
     }

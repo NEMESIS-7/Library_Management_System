@@ -83,19 +83,23 @@ public class BookManagement {
             }
         }*/
     public void removeBook(String ISBN) {
+        boolean found = false;
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
             if (book.getISBN().equals(ISBN)) {
-                db.remove(entry.getKey());
+                found = true;
+                db.remove(book);
                 System.out.println(book.getTitle() + ", written by " + book.getAuthor() + " has been removed successfully");
-                break;
-            } else {
-                System.out.println(ISBN + " does not exist in the library");
             }
+
+        }
+        if (!found) {
+            System.out.println(ISBN + " does not exist in the library");
         }
     }
 
-    /*public void removeBook(String attribute, String query) {
+
+/*    public void removeBook(String attribute, String query) {
         boolean removed = false;
         Iterator<Map.Entry<String, Book>> iterator = db.entrySet().iterator();
         while (iterator.hasNext()) {
@@ -124,7 +128,6 @@ public class BookManagement {
             System.out.println("There is no book with " + attribute + ": " + query + " in the library");
         }
     }*/
-
     public Book borrowBook(String Title, String Author) {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
