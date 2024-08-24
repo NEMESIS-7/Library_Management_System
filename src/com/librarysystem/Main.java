@@ -43,8 +43,9 @@ public class Main {
       management.addBook("11012", book12);
 
 //      management.searchBooks("Title", "Black Star Day");
-      management.removeBook("Title", "Black Star Day");
-      management.displayBooks();
+//      management.removeBook("Title", "Black Star Day");
+      management.removeBook("22214474");
+//      management.displayBooks();
 //      management.searchBooks("Author", "Cillian Murphy");
 
 

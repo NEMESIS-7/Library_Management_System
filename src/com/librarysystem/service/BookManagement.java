@@ -78,19 +78,22 @@ public class BookManagement {
             }
         }
     }*/
-    public void removeBookByTitle(String title) {
-        if (db.containsKey(title)) {
-            db.remove(title);
-            System.out.println(title + " has been removed from the library");
-        }else{
-            System.out.println("the book with title: " + title + " is not in the library");
+    public void removeBook(String ISBN) {
+        for (Map.Entry<String, Book> entry : db.entrySet()) {
+            Book book = entry.getValue();
+            if (book.getISBN().equals(ISBN)) {
+                db.remove(entry.getKey());
+                System.out.println(book.getTitle() + ", written by " + book.getAuthor() + " has been removed successfully");
+                break;
+            } else {
+                System.out.println(ISBN + " does not exist in the library");
+            }
         }
     }
-    public void removeBook(String attribute, String query) {
+    /*public void removeBook(String attribute, String query) {
         boolean removed = false;
         Iterator<Map.Entry<String, Book>> iterator = db.entrySet().iterator();
         while (iterator.hasNext()) {
-            Map.Entry<String, Book> entry = iterator.next();
             Book book = entry.getValue();
             boolean match = false;
             switch (attribute.toLowerCase()) {
@@ -115,7 +118,7 @@ public class BookManagement {
         if(!removed){
             System.out.println("There is no book with " + attribute + ": " + query + " in the library");
         }
-    }
+    }*/
     public boolean borrowBook(String Title) {
         Book book = searchBook(Title, "title");
         if (book != null) {
