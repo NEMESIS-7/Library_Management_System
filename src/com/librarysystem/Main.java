@@ -1,6 +1,7 @@
 package com.librarysystem;
 
 import com.librarysystem.model.Book;
+import com.librarysystem.model.Member;
 import com.librarysystem.service.BookManagement;
 import com.librarysystem.service.UserManagement;
 
@@ -24,11 +25,26 @@ public class Main {
       Book book11 = new Book("Black Star Day", "Polly Gray", "774414");
       Book book12 = new Book("Black Star Day", "Michael Shelby", "11012");
 
+      Member member1 = new Member("Bruce Wayne", "001", "bruce@wayne.com", "Librarian");
+      Member member2 = new Member("Clark Kent", "002", "clark@dailyplanet.com", "Reader");
+      Member member3 = new Member("Diana Prince", "003", "diana@themyscira.com", "Librarian");
+      Member member4 = new Member("Barry Allen", "004", "barry@ccpd.com",  "Reader");
+      Member member5 = new Member("Arthur Curry", "005", "arthur@atlantis.com", "Reader");
+      Member member6 = new Member("Hal Jordan", "006", "hal@oa.com", "Librarian");
+      Member member7 = new Member("Victor Stone", "007", "victor@star.com", "Reader");
+      Member member8 = new Member("Oliver Queen", "008", "oliver@queen.com", "Reader");
+      Member member9 = new Member("John Constantine", "009", "john@occult.com", "Reader");
+      Member member10 = new Member("Billy Batson", "010", "billy@shazam.com", "Reader");
+      Member member11 = new Member("Kara Zor-El", "011", "kara@krypton.com", "Librarian");
+      Member member12 = new Member("J'onn J'onzz", "012", "jonn@mars.com", "Reader");
 
-      BookManagement management = new BookManagement();
+
+
+
       UserManagement userManagement = new UserManagement();
+      BookManagement management = new BookManagement();
 
-      management.addBook("22036", book);
+     /* management.addBook("22036", book);
       management.addBook("2203658", book1);
       management.addBook("556298", book2);
       management.addBook("2203256", book3);
@@ -42,12 +58,41 @@ public class Main {
       management.addBook("774414", book11);
       management.addBook("11012", book12);
 
-//      management.searchBooks("Title", "Black Star Day");
-//      management.removeBook("Title", "Black Star Day");
-      management.displayBooks();
+      management.searchBooks("Title", "Black Star Day");
       management.removeBook("887998");
-//      management.searchBooks("Author", "Cillian Murphy");
-//      management.borrowBook("The Red Right Hand", "Cillian Murphy");
+      management.searchBooks("Author", "John Shelby");
+      management.displayBooks();
+      management.borrowBook("The Red Right Hand", "Cillian Murphy");
+      management.borrowBook("The Red Right Hand", "Cillian Murphy");
+      management.returnBook("The Red Right Hand", "Cillian Murphy");
+      management.borrowBook("The Red Right Hand", "Cillian Murphy");
+      management.returnBook("The Red Right Hand", "Cillian Murphy");*/
+
+      userManagement.addMember("001", member1);
+      userManagement.addMember("002", member2);
+      userManagement.addMember("003", member3);
+      userManagement.addMember("004", member4);
+      userManagement.addMember("005", member5);
+      userManagement.addMember("006", member6);
+      userManagement.addMember("007", member7);
+      userManagement.addMember("008", member8);
+      userManagement.addMember("009", member9);
+      userManagement.addMember("010", member10);
+      userManagement.addMember("011", member11);
+      userManagement.addMember("012", member12);
+
+      userManagement.displayMembers();
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

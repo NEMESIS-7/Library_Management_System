@@ -9,11 +9,14 @@ public class UserManagement {
     public void addMember(String ID, Member member) {
         String name = member.getName();
         members.put(ID, member);
-        System.out.println(name + " added to the table");
+        System.out.println("Welcome to Kingmaker Library Management Systems, " + name);
     }
 
     public void displayMembers() {
         for (Member member : members.values()) {
+            if(members.isEmpty()){
+                System.out.println("No members found");
+            }
             System.out.println("Name: " + member.getName() + ", ID: " + member.getID() + ", Role: " + member.getRole() + '.');
         }
     }
