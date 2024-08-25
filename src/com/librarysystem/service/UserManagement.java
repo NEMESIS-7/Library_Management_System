@@ -49,13 +49,18 @@ public class UserManagement {
     }
 
     public Member searchByID(String ID) {
-        for (Map.Entry<String, Member> entry : members.entrySet()) {
-            Member member = entry.getValue();
+        Member member = members.get(ID);
+        if (member != null) {
+            return member;
+        }
+        return null;
+
+        /*for (Map.Entry<String, Member> entry : members.entrySet()) {
             if (entry.getValue().getID().equals(ID)) {
                 return member;
             }
         }
-        return null;
+        return null;*/
     }
 
     /*public void showRoles(String role) {
