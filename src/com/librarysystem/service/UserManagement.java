@@ -2,6 +2,8 @@ package com.librarysystem.service;
 
 import com.librarysystem.model.Book;
 import com.librarysystem.model.Member;
+import org.postgresql.gss.GSSOutputStream;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.*;
 public class UserManagement {
@@ -55,10 +57,8 @@ public class UserManagement {
                 return member;
             }
         }
-//        System.out.println("No member found with ID: " + ID);
-        return null;
+        throw new NoSuchElementException("No member with ID: " + ID);
     }
-
     /*public void showRoles(String role) {
         boolean found = false;
         for (Map.Entry<String, com.librarysystem.model.Member> entry : members.entrySet()) {

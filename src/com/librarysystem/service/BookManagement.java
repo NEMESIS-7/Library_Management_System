@@ -37,8 +37,7 @@ public class BookManagement {
                 return book;
             }
         }
-        System.out.println("There is no book with ISBN: " + ISBN + " in the library");
-        return null;
+        throw new NoSuchElementException("Book with ISBN " + ISBN + " not found");
     }
 
     public List<Book> searchBooks(String attribute, String query) {

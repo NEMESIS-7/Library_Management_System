@@ -88,13 +88,12 @@ public class Main {
       userManagement.addMember("012", member12);
 
       userManagement.displayMembers();
-      Member idSearch = userManagement.searchByID("013");
-      if (idSearch != null) {
+      try{
+        Member idSearch = userManagement.searchByID("013");
         System.out.println(idSearch);
-      }else{
-        System.out.println("No member found");
+      }catch (NoSuchElementException m){
+        System.out.println(m.getMessage());
       }
-
 
 
 
