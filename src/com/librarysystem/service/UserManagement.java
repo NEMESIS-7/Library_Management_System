@@ -49,18 +49,14 @@ public class UserManagement {
     }
 
     public Member searchByID(String ID) {
-        Member member = members.get(ID);
-        if (member != null) {
-            return member;
-        }
-        return null;
-
-        /*for (Map.Entry<String, Member> entry : members.entrySet()) {
+        for (Map.Entry<String, Member> entry : members.entrySet()) {
+            Member member = entry.getValue();
             if (entry.getValue().getID().equals(ID)) {
                 return member;
             }
         }
-        return null;*/
+//        System.out.println("No member found with ID: " + ID);
+        return null;
     }
 
     /*public void showRoles(String role) {

@@ -44,7 +44,7 @@ public class Main {
       UserManagement userManagement = new UserManagement();
       BookManagement management = new BookManagement();
 
-     /* management.addBook("22036", book);
+      management.addBook("22036", book);
       management.addBook("2203658", book1);
       management.addBook("556298", book2);
       management.addBook("2203256", book3);
@@ -58,6 +58,12 @@ public class Main {
       management.addBook("774414", book11);
       management.addBook("11012", book12);
 
+      /*Book search = management.searchBookByISBN("2224474");
+      if (search != null) {
+        System.out.println(search);
+      }else{
+        System.out.println("No book found");
+      }
       management.searchBooks("Title", "Black Star Day");
       management.removeBook("887998");
       management.searchBooks("Author", "John Shelby");
@@ -81,12 +87,15 @@ public class Main {
       userManagement.addMember("011", member11);
       userManagement.addMember("012", member12);
 
-//      userManagement.displayMembers();
+      userManagement.displayMembers();
       Member idSearch = userManagement.searchByID("013");
-      System.out.println(idSearch);
-      if (idSearch == null) {
-        System.out.println("member not found");
+      if (idSearch != null) {
+        System.out.println(idSearch);
+      }else{
+        System.out.println("No member found");
       }
+
+
 
 
 
