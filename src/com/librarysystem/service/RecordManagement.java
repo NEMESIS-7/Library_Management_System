@@ -26,8 +26,6 @@ public class RecordManagement {
         LocalDate borrowedDate = LocalDate.now();
         LocalDate dueDate = borrowedDate.plusDays(14);
 
-
-
         BorrowingRecords borrowingRecords = new BorrowingRecords(borrowID, memberID, ISBN,null,borrowedDate,dueDate);
         borrowedRecords.add(borrowingRecords);
 
