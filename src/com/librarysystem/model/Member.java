@@ -52,8 +52,8 @@ public class Member {
 
     //constructor
     public Member(String name, String ID, String email, String role) {
-        this.ID = ID;
         this.Name = name;
+        this.ID = ID;
         this.Email = email;
         this.Role = role;
 

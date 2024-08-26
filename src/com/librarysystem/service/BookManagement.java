@@ -1,7 +1,7 @@
 package com.librarysystem.service;
 
 import com.librarysystem.model.Book;
-import com.librarysystem.model.BorrowingRecords;
+import com.librarysystem.model.Member;
 
 import java.util.*;
 
@@ -126,12 +126,13 @@ public class BookManagement {
                 System.out.println("There is no book with " + attribute + ": " + query + " in the library");
             }
         }*/
-    public Book borrowBook(String Title, String Author) {
+    public Book borrowBook(Member member, String Title, String Author, RecordManagement record) {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
             if (book.getTitle().equals(Title) && book.getAuthor().equals(Author)) {
                 if (book.isAvailable()) {
                     System.out.println(book.getTitle() + ", written by " + book.getAuthor() + " has been borrowed");
+                    record.newRecord(member, book);
                     book.setAvailable(false);
                     return book;
                 } else {
@@ -139,7 +140,7 @@ public class BookManagement {
                 }
             }
         }
-        throw new NoSuchElementException("There is no book titled " + Title + " in the library");
+        throw new NoSuchElementException("There is no book titled " + Title + " written by " + Author +  " in the library");
     }
     public Book returnBook(String Title, String Author) {
         for (Map.Entry<String, Book> entry : db.entrySet()) {

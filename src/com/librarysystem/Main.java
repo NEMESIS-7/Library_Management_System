@@ -5,18 +5,13 @@ import com.librarysystem.model.Member;
 import com.librarysystem.service.BookManagement;
 import com.librarysystem.service.RecordManagement;
 import com.librarysystem.service.UserManagement;
-
-import java.sql.Time;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.*;
 
 
 public class Main {
     public static void main(String[] args) {
       Book book = new Book("The Great Gatsby", "Rod Wave", "22036");
-      Book book1 = new Book("The Dark Knight", "Christopher", "2203658");
+      Book book1 = new Book("The Dark Knight", "Christopher Nolan", "2203658");
       Book book2 = new Book("The Flash", "Greg Berlanti", "556298");
       Book book3 = new Book("Tintin", "Herge", "2203256");
       Book book4 = new Book("The Gentlemen", "Matthew McCounaghey", "5546321");
@@ -92,27 +87,45 @@ public class Main {
       userManagement.addMember("012", member12);
 
 //      userManagement.displayMembers();
-      try{
-        Member idSearch = userManagement.searchByID("002");
-        System.out.println(idSearch);
-      }catch (NoSuchElementException m){
-        System.out.println(m.getMessage());
-      }
-      userManagement.showLibrarians();
+//      try{
+//        Member idSearch = userManagement.searchByID("002");
+//        System.out.println(idSearch);
+//      }catch (NoSuchElementException m){
+//        System.out.println(m.getMessage());
+//      }
+//      userManagement.showLibrarians();
       RecordManagement recordManagement = new RecordManagement();
       try{
-        management.borrowBook("The Red Right Hand", "Cillian Murphy");
+        management.borrowBook(member2, "The Red Right Hand", "Cillian Murphy", recordManagement);
+      }catch (NoSuchElementException m){
+        System.out.println(m.getMessage());
+      }
+      try{
+        management.borrowBook(member2, "Black Star Day", "John Shelby", recordManagement);
+      }catch (NoSuchElementException m){
+        System.out.println(m.getMessage());
+      }
+      try{
+        management.borrowBook(member2, "The Great Gatsby", "Rod Wave", recordManagement);
+      }catch (NoSuchElementException m){
+        System.out.println(m.getMessage());
+      }
+      try{
+        management.borrowBook(member2, "The Dark Knight", "Christopher Nolan", recordManagement);
+      }catch (NoSuchElementException m){
+        System.out.println(m.getMessage());
+      }
+      try{
+        management.borrowBook(member2, "The Flash", "Greg Berlanti", recordManagement);
+      }catch (NoSuchElementException m){
+        System.out.println(m.getMessage());
+      }
+      try{
+        recordManagement.memberRecords(member2);
       }catch (NoSuchElementException m){
         System.out.println(m.getMessage());
       }
 
-      LocalDate localDate = LocalDate.now();
-      System.out.println(localDate);
-      LocalTime time = LocalTime.now().withNano(0).withSecond(0);
-      System.out.println(time);
-
-      String ID = UUID.randomUUID().toString();
-      System.out.println(ID);
 
 
 

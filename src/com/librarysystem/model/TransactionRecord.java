@@ -3,17 +3,17 @@ package com.librarysystem.model;
 import java.time.*;
 import java.util.*;
 
-public class BorrowingRecords {
+public class TransactionRecord {
     private String borrowID;
     private String memberID;
     private String ISBN;
     private LocalDate borrowedDate;
     private LocalDate returnDate;
     private LocalDate dueDate;
-    private final List<BorrowingRecords> borrowedRecords = new ArrayList<>();
+    private final List<TransactionRecord> borrowedRecords = new ArrayList<>();
 
 
-    public BorrowingRecords(String borrowID, String memberID, String ISBN, LocalDate returnDate, LocalDate borrowedDate, LocalDate dueDate) {
+    public TransactionRecord(String borrowID, String memberID, String ISBN, LocalDate returnDate, LocalDate borrowedDate, LocalDate dueDate) {
         this.borrowID = borrowID;
         this.memberID = memberID;
         this.ISBN = ISBN;
@@ -72,13 +72,13 @@ public class BorrowingRecords {
 
     @Override
     public String toString() {
-        return "BorrowingRecord{" +
-                "id='" + borrowID + '\'' +
-                ", memberId='" + memberID + '\'' +
-                ", isbn='" + ISBN + '\'' +
-                ", borrowedAt=" + borrowedDate +
-                ", dueDate=" + dueDate +
-                ", returnedAt=" + returnDate +
-                '}';
+        return "Borrowing Record [" +
+                "TrancationID: " + borrowID + '\'' +
+                ", Member ID: '" + memberID + '\'' +
+                ", Book ISBN'" + ISBN + '\'' +
+                ", Date Borrowed: " + borrowedDate +
+                ", Date to be Returned: " + dueDate +
+                ", Date Returned: " + returnDate +
+                ']';
     }
     }
