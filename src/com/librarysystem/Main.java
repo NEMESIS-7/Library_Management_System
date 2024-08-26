@@ -3,9 +3,13 @@ package com.librarysystem;
 import com.librarysystem.model.Book;
 import com.librarysystem.model.Member;
 import com.librarysystem.service.BookManagement;
+import com.librarysystem.service.RecordManagement;
 import com.librarysystem.service.UserManagement;
 
-import javax.swing.border.TitledBorder;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 
@@ -87,13 +91,29 @@ public class Main {
       userManagement.addMember("011", member11);
       userManagement.addMember("012", member12);
 
-      userManagement.displayMembers();
+//      userManagement.displayMembers();
       try{
-        Member idSearch = userManagement.searchByID("013");
+        Member idSearch = userManagement.searchByID("002");
         System.out.println(idSearch);
       }catch (NoSuchElementException m){
         System.out.println(m.getMessage());
       }
+      userManagement.showLibrarians();
+      RecordManagement recordManagement = new RecordManagement();
+      try{
+        management.borrowBook("The Red Right Hand", "Cillian Murphy");
+      }catch (NoSuchElementException m){
+        System.out.println(m.getMessage());
+      }
+
+      LocalDate localDate = LocalDate.now();
+      System.out.println(localDate);
+      LocalTime time = LocalTime.now().withNano(0).withSecond(0);
+      System.out.println(time);
+
+      String ID = UUID.randomUUID().toString();
+      System.out.println(ID);
+
 
 
 

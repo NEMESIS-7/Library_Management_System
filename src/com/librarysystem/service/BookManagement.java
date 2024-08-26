@@ -1,6 +1,7 @@
 package com.librarysystem.service;
 
 import com.librarysystem.model.Book;
+import com.librarysystem.model.BorrowingRecords;
 
 import java.util.*;
 
@@ -138,7 +139,7 @@ public class BookManagement {
                 }
             }
         }
-        return null;
+        throw new NoSuchElementException("There is no book titled " + Title + " in the library");
     }
     public Book returnBook(String Title, String Author) {
         for (Map.Entry<String, Book> entry : db.entrySet()) {

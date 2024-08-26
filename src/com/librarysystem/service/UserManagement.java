@@ -1,9 +1,6 @@
 package com.librarysystem.service;
 
-import com.librarysystem.model.Book;
 import com.librarysystem.model.Member;
-import org.postgresql.gss.GSSOutputStream;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.*;
 public class UserManagement {
@@ -79,7 +76,7 @@ public class UserManagement {
     public void showLibrarians() {
         for (Map.Entry<String, Member> entry : members.entrySet()) {
             if (entry.getValue().getRole().equals("Librarian")) {
-                System.out.println(entry.getValue().getRole() + ": " + entry.getValue().getName());
+                System.out.println("ID: " + entry.getValue().getID() + " - " + entry.getValue().getRole() + ": " + entry.getValue().getName());
             }
         }
     }

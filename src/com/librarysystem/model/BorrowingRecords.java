@@ -1,34 +1,33 @@
 package com.librarysystem.model;
 
 import java.time.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class BorrowingRecords {
-    private String borrowedID;
+    private String borrowID;
     private String memberID;
-    private List <BorrowingRecords> borrowedRecords = new ArrayList<BorrowingRecords>();
+    private String ISBN;
+    private LocalDate borrowedDate;
+    private LocalDate returnDate;
+    private LocalDate dueDate;
+    private final List<BorrowingRecords> borrowedRecords = new ArrayList<>();
 
-    public BorrowingRecords(String borrowedID, String memberID, String ISBN, LocalDateTime returnDate, LocalDateTime borrowedDate, LocalDateTime dueDate) {
-        this.borrowedID = borrowedID;
+
+    public BorrowingRecords(String borrowID, String memberID, String ISBN, LocalDate returnDate, LocalDate borrowedDate, LocalDate dueDate) {
+        this.borrowID = borrowID;
         this.memberID = memberID;
         this.ISBN = ISBN;
-        this.returnDate = returnDate;
+        this.returnDate = null;
         this.borrowedDate = borrowedDate;
-        this.dueDate = null;
+        this.dueDate = dueDate;
     }
-
-    private String ISBN;
-    private LocalDateTime borrowedDate;
-    private LocalDateTime returnDate;
-    private LocalDateTime dueDate;
 
     public String getBorrowedID() {
-        return borrowedID;
+        return borrowID;
     }
 
-    public void setBorrowedID(String borrowedID) {
-        this.borrowedID = borrowedID;
+    public void setBorrowedID(String borrowID) {
+        this.borrowID = borrowID;
     }
 
     public String getMemberID() {
@@ -47,34 +46,34 @@ public class BorrowingRecords {
         this.ISBN = ISBN;
     }
 
-    public LocalDateTime getBorrowedDate() {
+    public LocalDate getBorrowedDate() {
         return borrowedDate;
     }
 
-    public void setBorrowedDate(LocalDateTime borrowedDate) {
+    public void setBorrowedDate(LocalDate borrowedDate) {
         this.borrowedDate = borrowedDate;
     }
 
-    public LocalDateTime getReturnDate() {
+    public LocalDate getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(LocalDateTime returnDate) {
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
 
-    public LocalDateTime getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
 
     @Override
     public String toString() {
         return "BorrowingRecord{" +
-                "id='" + borrowedID + '\'' +
+                "id='" + borrowID + '\'' +
                 ", memberId='" + memberID + '\'' +
                 ", isbn='" + ISBN + '\'' +
                 ", borrowedAt=" + borrowedDate +
