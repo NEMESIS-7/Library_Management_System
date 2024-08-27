@@ -43,7 +43,7 @@ public class Main {
       UserManagement userManagement = new UserManagement();
       BookManagement management = new BookManagement();
 
-      management.addBook("22036", book);
+      /*management.addBook("22036", book);
       management.addBook("2203658", book1);
       management.addBook("556298", book2);
       management.addBook("2203256", book3);
@@ -55,7 +55,7 @@ public class Main {
       management.addBook("22214474", book9);
       management.addBook("887998", book10);
       management.addBook("774414", book11);
-      management.addBook("11012", book12);
+      management.addBook("11012", book12);*/
 
       /*Book search = management.searchBookByISBN("2224474");
       if (search != null) {
@@ -87,44 +87,30 @@ public class Main {
       userManagement.addMember("012", member12);
 
 //      userManagement.displayMembers();
-//      try{
-//        Member idSearch = userManagement.searchByID("002");
-//        System.out.println(idSearch);
-//      }catch (NoSuchElementException m){
-//        System.out.println(m.getMessage());
-//      }
-//      userManagement.showLibrarians();
-      RecordManagement recordManagement = new RecordManagement();
+//      userManagement.searchMembers("Name", "Hal Jordan");
       try{
-        management.borrowBook(member2, "The Red Right Hand", "Cillian Murphy", recordManagement);
-      }catch (NoSuchElementException m){
+        String SearchResults = userManagement.showMemberRoles("Reader").toString();
+        System.out.println("Search Results: " + "\n" + SearchResults + "\n");
+      }catch(NoSuchElementException m){
         System.out.println(m.getMessage());
       }
-      try{
-        management.borrowBook(member2, "Black Star Day", "John Shelby", recordManagement);
-      }catch (NoSuchElementException m){
-        System.out.println(m.getMessage());
-      }
-      try{
-        management.borrowBook(member2, "The Great Gatsby", "Rod Wave", recordManagement);
-      }catch (NoSuchElementException m){
-        System.out.println(m.getMessage());
-      }
-      try{
-        management.borrowBook(member2, "The Dark Knight", "Christopher Nolan", recordManagement);
-      }catch (NoSuchElementException m){
-        System.out.println(m.getMessage());
-      }
-      try{
-        management.borrowBook(member2, "The Flash", "Greg Berlanti", recordManagement);
-      }catch (NoSuchElementException m){
-        System.out.println(m.getMessage());
-      }
-      try{
-        recordManagement.memberRecords(member2);
-      }catch (NoSuchElementException m){
-        System.out.println(m.getMessage());
-      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

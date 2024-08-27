@@ -61,7 +61,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Search Results: Name: " + Name + ", ID: " + ID + ", Email: " + Email + ", Role: " + Role;
+        return "\nName: " + Name + "\nID: " + ID + "\nEmail: " + Email + "\nRole: " + Role + '.';
     }
 }
 
@@ -73,7 +73,7 @@ class Reader extends Member{
    //displaying reader information
     @Override
     public void displayInfo(){
-        System.out.println("com.librarysystem.model.Reader information:  ");
+        System.out.println("Reader information:  ");
         super.displayInfo();
     }
 }
@@ -90,14 +90,14 @@ class Employee extends Member{
     //method to take employee information
     public Employee(String name, String ID, String email, String role) {
         super(name, ID, email, role);        //calling the constructor of the super class member
-        System.out.println("enter your employee ID: ");
+        System.out.println("Enter your employee ID: ");
         this.employeeID = input.nextLine();
 
     }
     //method  to display user information
     @Override
     public void displayInfo(){
-        System.out.println("com.librarysystem.model.Employee information:  ");
+        System.out.println("Employee information:  ");
         super.displayInfo();
 
     }

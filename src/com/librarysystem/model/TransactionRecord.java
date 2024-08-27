@@ -4,7 +4,7 @@ import java.time.*;
 import java.util.*;
 
 public class TransactionRecord {
-    private String borrowID;
+    private String recordID;
     private String memberID;
     private String ISBN;
     private LocalDate borrowedDate;
@@ -13,8 +13,8 @@ public class TransactionRecord {
     private final List<TransactionRecord> borrowedRecords = new ArrayList<>();
 
 
-    public TransactionRecord(String borrowID, String memberID, String ISBN, LocalDate returnDate, LocalDate borrowedDate, LocalDate dueDate) {
-        this.borrowID = borrowID;
+    public TransactionRecord(String recordID, String memberID, String ISBN, LocalDate returnDate, LocalDate borrowedDate, LocalDate dueDate) {
+        this.recordID = recordID;
         this.memberID = memberID;
         this.ISBN = ISBN;
         this.returnDate = null;
@@ -23,11 +23,11 @@ public class TransactionRecord {
     }
 
     public String getBorrowedID() {
-        return borrowID;
+        return recordID;
     }
 
-    public void setBorrowedID(String borrowID) {
-        this.borrowID = borrowID;
+    public void setBorrowedID(String recordID) {
+        this.recordID = recordID;
     }
 
     public String getMemberID() {
@@ -73,7 +73,7 @@ public class TransactionRecord {
     @Override
     public String toString() {
         return "Borrowing Record [" +
-                "TrancationID: " + borrowID + '\'' +
+                "TrancationID: " + recordID + '\'' +
                 ", Member ID: '" + memberID + '\'' +
                 ", Book ISBN'" + ISBN + '\'' +
                 ", Date Borrowed: " + borrowedDate +

@@ -10,17 +10,20 @@ public class BookManagement {
 
     //method to add book to the library using a book object
     public void addBook(String ISBN, Book book) {
+        //storing the book object in the map
         db.put(ISBN, book);
-        String title = book.getTitle();
-        System.out.println(title + " written by " + book.getAuthor() + " has been added to the library");
+        //printing a nice message for the users
+        System.out.println(book.getTitle() + " written by " + book.getAuthor() + " has been added to the library");
     }
 
-    public void dislpayMapping() {
+   //not really necessary, I was trying something
+    public void displayMapping() {
         for (Map.Entry<String, Book> book : db.entrySet()) {
             System.out.println(book.getKey() + " " + book.getValue());
         }
     }
 
+    //method to display all books
     public void displayBooks() {
         if (db.isEmpty()) {
             System.out.println("There are no books in the library");
@@ -126,7 +129,7 @@ public class BookManagement {
                 System.out.println("There is no book with " + attribute + ": " + query + " in the library");
             }
         }*/
-    public Book borrowBook(Member member, String Title, String Author, RecordManagement record) {
+    public Book borrowBook(Member member, String Title, String Author, RecordManagement record) throws NoSuchElementException {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
             if (book.getTitle().equals(Title) && book.getAuthor().equals(Author)) {
@@ -142,7 +145,7 @@ public class BookManagement {
         }
         throw new NoSuchElementException("There is no book titled " + Title + " written by " + Author +  " in the library");
     }
-    public Book returnBook(String Title, String Author) {
+    public Book returnBook(String Title, String Author) throws Exception {
         for (Map.Entry<String, Book> entry : db.entrySet()) {
             Book book = entry.getValue();
             if (book.getTitle().equals(Title) && book.getAuthor().equals(Author)) {
@@ -153,6 +156,6 @@ public class BookManagement {
                 }
             }
         }
-        return null;
+        throw new Exception("Invalid");
     }
 }
