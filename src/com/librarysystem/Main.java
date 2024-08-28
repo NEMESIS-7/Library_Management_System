@@ -32,7 +32,7 @@ public class Main {
       Member member6 = new Member("Hal Jordan", "006", "hal@oa.com", "Librarian");
       Member member7 = new Member("Victor Stone", "007", "victor@star.com", "Reader");
       Member member8 = new Member("Oliver Queen", "008", "oliver@queen.com", "Reader");
-      Member member9 = new Member("John Constantine", "009", "john@occult.com", "Reader");
+      Member member9 = new Member("John Constantine", "009", "john@const.com", "Reader");
       Member member10 = new Member("Billy Batson", "010", "billy@shazam.com", "Reader");
       Member member11 = new Member("Kara Zor-El", "011", "kara@krypton.com", "Librarian");
       Member member12 = new Member("J'onn J'onzz", "012", "jonn@mars.com", "Reader");
@@ -86,14 +86,10 @@ public class Main {
       userManagement.addMember("011", member11);
       userManagement.addMember("012", member12);
 
-//      userManagement.displayMembers();
-//      userManagement.searchMembers("Name", "Hal Jordan");
-      try{
-        String SearchResults = userManagement.showMemberRoles("Reader").toString();
-        System.out.println("Search Results: " + "\n" + SearchResults + "\n");
-      }catch(NoSuchElementException m){
-        System.out.println(m.getMessage());
-      }
+
+      System.out.println("Search Results:");
+      userManagement.showMemberRoles("librarian");
+
 
 
 

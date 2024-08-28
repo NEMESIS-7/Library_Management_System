@@ -134,7 +134,7 @@ public class BookManagement {
             Book book = entry.getValue();
             if (book.getTitle().equals(Title) && book.getAuthor().equals(Author)) {
                 if (book.isAvailable()) {
-                    System.out.println(book.getTitle() + ", written by " + book.getAuthor() + " has been borrowed");
+                    System.out.println(book.getTitle() + ", written by " + book.getAuthor() + " has been borrowed by " + member.getName());
                     record.newRecord(member, book);
                     book.setAvailable(false);
                     return book;

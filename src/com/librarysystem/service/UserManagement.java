@@ -103,9 +103,17 @@ public class UserManagement {
                 searchResults.add(member);
             }
         }
-//        for (Member member : searchResults) {
-//            System.out.println(member);
-//        }
+        if(searchResults.isEmpty()){
+            switch (query.toLowerCase()) {
+                case "librarian" : System.out.println("There are no " + query + "s in the library");
+                case "reader" : System.out.println("There are no " + query + "s in the reader");
+                default : System.out.println("There are no " + query + "s in the library");
+            }
+        }else{
+            for (Member member : searchResults) {
+                System.out.println(member);
+            }
+        }
         return searchResults;
     }
 }
