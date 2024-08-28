@@ -10,8 +10,6 @@ public class TransactionRecord {
     private LocalDate borrowedDate;
     private LocalDate returnDate;
     private LocalDate dueDate;
-    private final List<TransactionRecord> borrowedRecords = new ArrayList<>();
-
 
     public TransactionRecord(String recordID, String memberID, String ISBN, LocalDate returnDate, LocalDate borrowedDate, LocalDate dueDate) {
         this.recordID = recordID;

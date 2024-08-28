@@ -19,7 +19,6 @@ public class RecordManagement {
         }
         return borrowedRecords;
     }
-
     public List<TransactionRecord> newRecord(Member member, Book book) {
         String borrowID = UUID.randomUUID().toString();
         String memberID = member.getID();
@@ -32,8 +31,6 @@ public class RecordManagement {
 
         return borrowedRecords;
     }
-
-
     public List<TransactionRecord> memberRecord(Member member) {
         String memberID = member.getID();
         List<TransactionRecord> memberRecords = new ArrayList<>();
@@ -46,5 +43,14 @@ public class RecordManagement {
             throw new NoSuchElementException("No records found");
         }
         return memberRecords;
+    }
+    public List<TransactionRecord> showRecordByDate(LocalDate borrowDate) {
+        List<TransactionRecord> records = new ArrayList<>();
+        for (TransactionRecord borrowedRecord : borrowedRecords) {
+            if(borrowedRecord.getBorrowedDate().equals(borrowDate)) {
+                records.add(borrowedRecord);
+            }
+        }
+        return records;
     }
 }
