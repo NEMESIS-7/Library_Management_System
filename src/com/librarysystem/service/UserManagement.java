@@ -19,7 +19,7 @@ public class UserManagement {
     public void displayMembers() {
         //for each loop to iterate through the values in the map
         for (Member member : members.values()) {
-            if(members.isEmpty()){
+            if (members.isEmpty()) {
                 System.out.println("No members found");
             }
             //returning the values in the map
@@ -74,6 +74,7 @@ public class UserManagement {
         //throwing an exception in the event that no member object with query ID is found
         throw new NoSuchElementException("No member with ID: " + ID);
     }
+
     /*public void showRoles(String role) {
         boolean found = false;
         for (Map.Entry<String, com.librarysystem.model.Member> entry : members.entrySet()) {
@@ -86,13 +87,14 @@ public class UserManagement {
             throw new RuntimeException("no member with role " + role + " found");
         }
     }*/
-    public void showEmails(){
+    public void showEmails() {
         //for each loop to iterate through each entry "member object" and return the emails
         for (Map.Entry<String, Member> entry : members.entrySet()) {
             //returning the query
             System.out.println(entry.getValue().getEmail() + ": " + entry.getValue().getName());
         }
     }
+
     public List<Member> showMemberRoles(String query) {
         //looping the entry set and returning all librarians
         List<Member> searchResults = new ArrayList<>();
@@ -100,36 +102,37 @@ public class UserManagement {
             Member member = entry.getValue();
             if (query.equalsIgnoreCase("librarian") && entry.getValue().getRole().equals("Librarian")) {
                 searchResults.add(member);
-            }else if(query.equalsIgnoreCase("reader") && entry.getValue().getRole().equals("Reader")){
+            } else if (query.equalsIgnoreCase("reader") && entry.getValue().getRole().equals("Reader")) {
                 searchResults.add(member);
             }
         }
-        if(searchResults.isEmpty()){
+        if (searchResults.isEmpty()) {
             switch (query.toLowerCase()) {
-                case "librarian" : System.out.println("There are no " + query + "s in the library");
-                case "reader" : System.out.println("There are no " + query + "s in the reader");
-                default : System.out.println("There are no " + query + "s in the library");
+                case "librarian":
+                    System.out.println("There are no " + query + "s in the library");
+                case "reader":
+                    System.out.println("There are no " + query + "s in the reader");
+                default:
+                    System.out.println("There are no " + query + "s in the library");
             }
-        }else{
+        } else {
             for (Member member : searchResults) {
                 System.out.println(member);
             }
         }
         return searchResults;
     }
+
     public Member login(String ID, String password) {
-        for (Map.Entry<String, Member> entry : members.entrySet()) {
-            Member member = entry.getValue();
-            if(ID.equals(member.getID()) && !password.equals(member.getPassword())){
-                System.out.println("Wrong password");
-            }else if(!ID.equals(member.getID()) && password.equals(member.getPassword())){
-                System.out.println("Wrong ID");
-            }else if(!ID.equals(member.getID()) && !password.equals(member.getPassword())){
-                System.out.println("Member does not exist");
-            }else if(ID.equals(member.getID()) && password.equals(member.getPassword())){
-                return member;
+        for (Member member : members.values()) {
+            if (ID.equals(member.getID())) {
+                if (member.getPassword().equals(password)) {
+                    return member;
+                }else if(!member.getPassword().equals(password)){
+                    System.out.println("Wrong password");
+                }
             }
         }
-        throw new NoSuchElementException("No member with ID: " + ID + " and password: " + password);
+        throw new NoSuchElementException("No member with ID: " + ID);
     }
 }
