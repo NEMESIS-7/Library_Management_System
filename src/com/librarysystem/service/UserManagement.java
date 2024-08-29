@@ -2,6 +2,7 @@ package com.librarysystem.service;
 
 import com.librarysystem.model.Member;
 
+import java.sql.SQLOutput;
 import java.util.*;
 public class UserManagement {
     private final HashMap<String, Member> members = new HashMap<>();
@@ -115,5 +116,20 @@ public class UserManagement {
             }
         }
         return searchResults;
+    }
+    public Member login(String ID, String password) {
+        for (Map.Entry<String, Member> entry : members.entrySet()) {
+            Member member = entry.getValue();
+            if(ID.equals(member.getID()) && !password.equals(member.getPassword())){
+                System.out.println("Wrong password");
+            }else if(!ID.equals(member.getID()) && password.equals(member.getPassword())){
+                System.out.println("Wrong ID");
+            }else if(!ID.equals(member.getID()) && !password.equals(member.getPassword())){
+                System.out.println("Member does not exist");
+            }else if(ID.equals(member.getID()) && password.equals(member.getPassword())){
+                return member;
+            }
+        }
+        throw new NoSuchElementException("No member with ID: " + ID + " and password: " + password);
     }
 }

@@ -51,11 +51,12 @@ public class Member {
     }
 
     //constructor
-    public Member(String name, String ID, String email, String role) {
+    public Member(String name, String ID, String email, String role, String password) {
         this.Name = name;
         this.ID = ID;
         this.Email = email;
         this.Role = role;
+        this.Password = "";
 
     }
 
@@ -66,8 +67,8 @@ public class Member {
 }
 
 class Reader extends Member{
-   public Reader(String name, String ID, String email, String role) {
-       super(name, ID, email, role); //constructor
+   public Reader(String name, String ID, String email, String role, String password) {
+       super(name, ID, email, role, password); //constructor
    }
 
    //displaying reader information
@@ -88,8 +89,8 @@ class Employee extends Member{
         this.employeeID = employeeID;
     }
     //method to take employee information
-    public Employee(String name, String ID, String email, String role) {
-        super(name, ID, email, role);        //calling the constructor of the super class member
+    public Employee(String name, String ID, String email, String role, String password) {
+        super(name, ID, email, role, password);        //calling the constructor of the super class member
         System.out.println("Enter your employee ID: ");
         this.employeeID = input.nextLine();
 

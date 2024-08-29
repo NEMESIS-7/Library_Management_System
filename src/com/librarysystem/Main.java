@@ -3,10 +3,7 @@ package com.librarysystem;
 import com.librarysystem.model.Book;
 import com.librarysystem.model.Member;
 import com.librarysystem.service.BookManagement;
-import com.librarysystem.service.RecordManagement;
 import com.librarysystem.service.UserManagement;
-import java.util.*;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -24,18 +21,18 @@ public class Main {
       Book book11 = new Book("Black Star Day", "Polly Gray", "774414");
       Book book12 = new Book("Black Star Day", "Michael Shelby", "11012");
 
-      Member member1 = new Member("Bruce Wayne", "001", "bruce@wayne.com", "Librarian");
-      Member member2 = new Member("Clark Kent", "002", "clark@dailyplanet.com", "Reader");
-      Member member3 = new Member("Diana Prince", "003", "diana@themyscira.com", "Librarian");
-      Member member4 = new Member("Barry Allen", "004", "barry@ccpd.com",  "Reader");
-      Member member5 = new Member("Arthur Curry", "005", "arthur@atlantis.com", "Reader");
-      Member member6 = new Member("Hal Jordan", "006", "hal@oa.com", "Librarian");
-      Member member7 = new Member("Victor Stone", "007", "victor@star.com", "Reader");
-      Member member8 = new Member("Oliver Queen", "008", "oliver@queen.com", "Reader");
-      Member member9 = new Member("John Constantine", "009", "john@const.com", "Reader");
-      Member member10 = new Member("Billy Batson", "010", "billy@shazam.com", "Reader");
-      Member member11 = new Member("Kara Zor-El", "011", "kara@krypton.com", "Librarian");
-      Member member12 = new Member("J'onn J'onzz", "012", "jonn@mars.com", "Reader");
+      Member member1 = new Member("Bruce Wayne", "001", "bruce@wayne.com", "Librarian", "L001");
+      Member member2 = new Member("Clark Kent", "002", "clark@dailyplanet.com", "Reader", "R001");
+      Member member3 = new Member("Diana Prince", "003", "diana@themyscira.com", "Librarian", "L002");
+      Member member4 = new Member("Barry Allen", "004", "barry@ccpd.com",  "Reader", "R003");
+      Member member5 = new Member("Arthur Curry", "005", "arthur@atlantis.com", "Reader", "R004");
+      Member member6 = new Member("Hal Jordan", "006", "hal@oa.com", "Librarian", "L003");
+      Member member7 = new Member("Victor Stone", "007", "victor@star.com", "Reader", "R005");
+      Member member8 = new Member("Oliver Queen", "008", "oliver@queen.com", "Reader", "R006");
+      Member member9 = new Member("John Constantine", "009", "john@const.com", "Reader", "R007");
+      Member member10 = new Member("Billy Batson", "010", "billy@shazam.com", "Reader","R006");
+      Member member11 = new Member("Kara Zor-El", "011", "kara@krypton.com", "Librarian", "L004");
+      Member member12 = new Member("J'onn J'onzz", "012", "jonn@mars.com", "Reader", "R007");
 
 
 
@@ -89,6 +86,8 @@ public class Main {
 
       System.out.println("Search Results:");
       userManagement.showMemberRoles("librarian");
+
+
 
 
 
