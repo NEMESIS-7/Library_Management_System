@@ -2,10 +2,9 @@ package com.librarysystem.service;
 
 import com.librarysystem.model.Member;
 
-import java.sql.SQLOutput;
 import java.util.*;
 public class UserManagement {
-    private final HashMap<String, Member> members = new HashMap<>();
+    private final Map<String, Member> members = new HashMap<>();
 
     public void addMember(String ID, Member member) {
         //initializing a string object to store the member's name
@@ -110,8 +109,10 @@ public class UserManagement {
             switch (query.toLowerCase()) {
                 case "librarian":
                     System.out.println("There are no " + query + "s in the library");
+                    break;
                 case "reader":
                     System.out.println("There are no " + query + "s in the reader");
+                    break;
                 default:
                     System.out.println("There are no " + query + "s in the library");
             }

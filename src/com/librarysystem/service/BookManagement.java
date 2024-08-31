@@ -6,7 +6,7 @@ import com.librarysystem.model.Member;
 import java.util.*;
 
 public class BookManagement {
-    private final HashMap<String, Book> db = new HashMap<>();
+    private final Map<String, Book> db = new HashMap<>();
 
     //method to add book to the library using a book object
     public void addBook(String ISBN, Book book) {
