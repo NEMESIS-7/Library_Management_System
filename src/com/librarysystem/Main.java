@@ -40,7 +40,7 @@ public class Main {
       UserManagement userManagement = new UserManagement();
       BookManagement management = new BookManagement();
 
-      /*management.addBook("22036", book);
+      management.addBook("22036", book);
       management.addBook("2203658", book1);
       management.addBook("556298", book2);
       management.addBook("2203256", book3);
@@ -52,7 +52,7 @@ public class Main {
       management.addBook("22214474", book9);
       management.addBook("887998", book10);
       management.addBook("774414", book11);
-      management.addBook("11012", book12);*/
+      management.addBook("11012", book12);
 
       /*Book search = management.searchBookByISBN("2224474");
       if (search != null) {

@@ -79,4 +79,4 @@ public class TransactionRecord {
                 ", Date Returned: " + returnDate +
                 ']';
     }
-    }
+}
