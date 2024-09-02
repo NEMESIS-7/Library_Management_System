@@ -7,7 +7,7 @@ public class Member {
     private String Name;
     private String Email;
     private String Password;
-    private String Role;
+    private Roles Role;
 
     public String getID() {
         return ID;
@@ -33,10 +33,10 @@ public class Member {
     public String getPassword() {
         return Password;
     }
-    public String getRole() {
+    public Roles getRole() {
         return Role;
     }
-    public void setRole(String role) {
+    public void setRole(Roles role) {
         this.Role = role;
     }
 
@@ -51,7 +51,7 @@ public class Member {
     }
 
     //constructor
-    public Member(String name, String ID, String email, String role, String password) {
+    public Member(String name, String ID, String email, Roles role, String password) {
         this.Name = name;
         this.ID = ID;
         this.Email = email;
@@ -66,40 +66,3 @@ public class Member {
     }
 }
 
-class Reader extends Member{
-   public Reader(String name, String ID, String email, String role, String password) {
-       super(name, ID, email, role, password); //constructor
-   }
-
-   //displaying reader information
-    @Override
-    public void displayInfo(){
-        System.out.println("Reader information:  ");
-        super.displayInfo();
-    }
-}
-
-class Employee extends Member{
-    private String employeeID;
-
-    public String getEmployeeID() {
-        return employeeID;
-    }
-    public void setEmployeeID(String employeeID) {
-        this.employeeID = employeeID;
-    }
-    //method to take employee information
-    public Employee(String name, String ID, String email, String role, String password) {
-        super(name, ID, email, role, password);        //calling the constructor of the super class member
-        System.out.println("Enter your employee ID: ");
-        this.employeeID = input.nextLine();
-
-    }
-    //method  to display user information
-    @Override
-    public void displayInfo(){
-        System.out.println("Employee information:  ");
-        super.displayInfo();
-
-    }
-}
